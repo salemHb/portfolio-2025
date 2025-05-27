@@ -22,6 +22,7 @@ import {
   Coffee,
   Zap,
   Heart,
+  DollarSign,
 } from "lucide-react";
 import GradientMagicButton from "./gradient-magic-button";
 
@@ -454,7 +455,7 @@ export default function Contact() {
                     className="inline-flex items-center justify-center space-x-2 px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:scale-105 w-full md:w-4/5 text-lg shadow-lg hover:shadow-xl text-white [&_*]:!text-white"
                     accentColor="primary"
                   >
-                    <Heart className="w-6 h-6" />
+                    <DollarSign className="w-6 h-6" />
                     <span>Caffeinate</span>
                   </GradientMagicButton>
                   <p className="text-xs text-[var(--text-secondary)] text-center">
