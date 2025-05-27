@@ -439,8 +439,9 @@ export default function Contact() {
                   Buy Me a Coffee
                 </h4>
                 <p className="text-[var(--text-secondary)] text-base mb-8 leading-relaxed text-center">
-                  Support my journey in tech and help me continue creating
-                  valuable content for the developer community.
+                Thank you for validating my need to make things that probably didn’t need making.
+
+
                 </p>
 
                 {/* Strong CTA */}
@@ -454,10 +455,10 @@ export default function Contact() {
                     accentColor="primary"
                   >
                     <Heart className="w-6 h-6" />
-                    <span>Support My Work</span>
+                    <span>Caffeinate</span>
                   </GradientMagicButton>
                   <p className="text-xs text-[var(--text-secondary)] text-center">
-                    ☕ Every coffee helps fuel innovation
+                    ☕ Coffee goes in, code comes out
                   </p>
                 </div>
               </div>
