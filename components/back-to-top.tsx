@@ -45,7 +45,7 @@ export default function BackToTop() {
   return (
     <motion.button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-xl flex items-center justify-center z-50 transition-all duration-300 shadow-lg shadow-blue-500/30 ${
+      className={`fixed bottom-8 right-4 sm:right-8 w-12 h-12 bg-blue-500 hover:bg-blue-600 text-white rounded-xl flex items-center justify-center z-50 transition-all duration-300 shadow-lg shadow-blue-500/30 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
       }`}
       style={{
