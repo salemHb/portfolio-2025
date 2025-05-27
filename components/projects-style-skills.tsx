@@ -132,22 +132,10 @@ export default function SidebarNavigationLayout({
     }
   }, [activeCategory, searchQuery, selectedItem.id, items, contentType]);
 
-  // Intersection Observer for scroll animations
+  // Always set content to visible immediately without waiting for scroll
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => observer.disconnect();
+    // Set visibility to true immediately when component mounts
+    setIsVisible(true);
   }, []);
 
   // Mouse movement for parallax effects

@@ -378,10 +378,9 @@ export default function Projects() {
     setFilteredProjects(filtered)
   }, [activeCategory, activeTechnology, searchQuery])
 
-  // Set content to be immediately visible without waiting for scroll
+  // Set content to be immediately visible when component mounts
   useEffect(() => {
-    // Immediately set content to visible without waiting for scroll
-    setIsVisible(true)
+    setIsVisible(true);
   }, [])
 
   // Mouse movement for parallax effects
@@ -476,11 +475,7 @@ export default function Projects() {
         </div>
 
         {/* Search and Filters */}
-        <div
-          className={`mb-12 transform transition-all duration-100 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-0 opacity-100"
-          }`}
-        >
+        <div className="mb-12">
           {/* Search Bar */}
           <div className="relative mb-6">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#b4bcd0] w-5 h-5" />
@@ -606,12 +601,7 @@ function ProjectCard({
 
   return (
     <div
-      className={`glass-card overflow-hidden cursor-pointer transform transition-all duration-1000 hover:scale-105 ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-      }`}
-      style={{
-        transitionDelay: `${0.2 + index * 0.1}s`,
-      }}
+      className="glass-card overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 opacity-100"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onSelect(project)}

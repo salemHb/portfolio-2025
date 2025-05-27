@@ -221,22 +221,9 @@ export default function CommunityImpact() {
     setFilteredEvents(filtered)
   }, [activeFilter, activeYear])
 
-  // Intersection Observer for scroll animations
+  // Set content to be immediately visible when component mounts
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
-    }
-
-    return () => observer.disconnect()
+    setIsVisible(true)
   }, [])
 
   // Mouse movement for parallax effects
@@ -405,18 +392,15 @@ export default function CommunityImpact() {
           {/* Speaking Engagements Tab */}
           <div
             className={cn(
-              "transition-all duration-500 transform",
+              "transition-all duration-300",
               activeTab === "speaking" && !isLoading
-                ? "opacity-100 translate-x-0"
-                : "absolute opacity-0 translate-x-8 pointer-events-none",
+                ? "opacity-100"
+                : "absolute opacity-0 pointer-events-none",
             )}
           >
             {/* Filters */}
-            <div
-              className={`mb-6 md:mb-12 transform transition-all duration-1000 px-4 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
-            >
+            <div className="mb-6 md:mb-12 px-4">
+            
               {/* Event Type Filters */}
               <div className="mb-6 glass-card p-4 rounded-lg">
                 <h4 className="text-sm font-medium text-[#b4bcd0] mb-3 flex items-center">
@@ -492,12 +476,7 @@ export default function CommunityImpact() {
                   {filteredEvents.map((event, index) => (
                     <div
                       key={event.id}
-                      className={`community-timeline-item relative ${
-                        isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-                      }`}
-                      style={{
-                        transitionDelay: `${0.2 + index * 0.1}s`,
-                      }}
+                      className="community-timeline-item relative"
                     >
                       {/* Event indicator dot - positioned relative to the timeline line */}
                       <div
@@ -514,6 +493,10 @@ export default function CommunityImpact() {
                       <div
                         className="glass-card overflow-hidden cursor-pointer transition-colors duration-300 hover:border-[var(--accent-primary)] hover:shadow-sm"
                         onClick={() => toggleCard(event.id)}
+                        onKeyDown={(e) => e.key === 'Enter' && toggleCard(event.id)}
+                        tabIndex={0}
+                        role="button"
+                        aria-expanded={expandedCard === event.id}
                       >
                         {/* Rest of the card content remains the same */}
                         <div className="p-4 md:p-6">
@@ -627,22 +610,17 @@ export default function CommunityImpact() {
           {/* Community Leadership Tab */}
           <div
             className={cn(
-              "transition-all duration-500 transform",
+              "transition-all duration-300",
               activeTab === "leadership" && !isLoading
-                ? "opacity-100 translate-x-0"
-                : "absolute opacity-0 translate-x-8 pointer-events-none",
+                ? "opacity-100"
+                : "absolute opacity-0 pointer-events-none",
             )}
           >
             <div className="grid md:grid-cols-1 gap-8">
               {communityRoles.map((role, index) => (
                 <div
                   key={role.id}
-                  className={`glass-card p-4 md:p-6 lg:p-8 transform transition-all duration-1000 hover:scale-105 ${
-                    isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                  }`}
-                  style={{
-                    transitionDelay: `${0.2 + index * 0.1}s`,
-                  }}
+                  className="glass-card p-4 md:p-6 lg:p-8 transition-all duration-300 hover:scale-105"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-6">
                     {/* Organization Logo */}
@@ -747,29 +725,24 @@ export default function CommunityImpact() {
           {/* Volunteering & Mentorship Tab */}
           <div
             className={cn(
-              "transition-all duration-500 transform",
+              "transition-all duration-300",
               activeTab === "volunteering" && !isLoading
-                ? "opacity-100 translate-x-0"
-                : "absolute opacity-0 translate-x-8 pointer-events-none",
+                ? "opacity-100"
+                : "absolute opacity-0 pointer-events-none",
             )}
           >
             <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
               {volunteeringActivities.map((activity, index) => (
                 <div
                   key={activity.id}
-                  className={`glass-card p-4 md:p-6 lg:p-8 transform transition-all duration-1000 hover:scale-105 ${
-                    isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                  }`}
-                  style={{
-                    transitionDelay: `${0.2 + index * 0.1}s`,
-                  }}
+                  className="glass-card p-4 md:p-6 lg:p-8 transition-all duration-300 hover:scale-105"
                 >
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
                       <div className="w-16 h-16 rounded-lg glass-card flex items-center justify-center overflow-hidden">
                         {activity.logo ? (
                           <img
-                            src={activity.logo || "/placeholder.svg"}
+                            src={activity.logo ?? "/placeholder.svg"}
                             alt={activity.organization}
                             className="w-12 h-12 object-contain"
                           />
@@ -815,12 +788,7 @@ export default function CommunityImpact() {
 
             {/* Volunteering Impact Summary */}
             <div
-              className={`glass-card p-8 mt-12 transform transition-all duration-1000 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-              }`}
-              style={{
-                transitionDelay: "0.6s",
-              }}
+              className="glass-card p-8 mt-12"
             >
               <h3 className="text-xl font-bold mb-4 text-center">Volunteering Impact Summary</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -872,12 +840,7 @@ export default function CommunityImpact() {
 
         {/* Call to Action */}
         <div
-          className={`glass-card rounded-xl overflow-hidden p-4 md:p-8 mt-8 md:mt-16 text-center transform transition-all duration-1000 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}
-          style={{
-            transitionDelay: "0.8s",
-          }}
+          className="glass-card rounded-xl overflow-hidden p-4 md:p-8 mt-8 md:mt-16 text-center"
         >
           <h3 className="text-2xl font-bold mb-4">Interested in Collaboration?</h3>
           <p className="text-[#b4bcd0] mb-6 max-w-2xl mx-auto">

@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Github, Linkedin, Twitter, Mail, Sun, Moon, Heart } from "lucide-react"
+import { useTheme } from "next-themes"
 
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear())
-  const [isDarkMode, setIsDarkMode] = useState(true)
+  const { theme, setTheme } = useTheme()
   const [pageLoadTime, setPageLoadTime] = useState<number | null>(null)
 
   useEffect(() => {
@@ -24,8 +25,7 @@ export default function Footer() {
   }, [])
 
   const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode)
-    // In a real implementation, this would toggle the theme
+    setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
   const navLinks = [
@@ -112,8 +112,8 @@ export default function Footer() {
                 onClick={toggleTheme}
                 className="glass-card px-4 py-2 rounded-lg flex items-center hover:text-[#00d4ff] transition-colors"
               >
-                {isDarkMode ? <Sun className="w-4 h-4 mr-2" /> : <Moon className="w-4 h-4 mr-2" />}
-                {isDarkMode ? "Light Mode" : "Dark Mode"}
+                {theme === 'dark' ? <Sun className="w-4 h-4 mr-2" /> : <Moon className="w-4 h-4 mr-2" />}
+                {theme === 'dark' ? "Light Mode" : "Dark Mode"}
               </button>
             </div>
           </div>

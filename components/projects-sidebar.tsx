@@ -33,7 +33,7 @@ interface Project {
   technologies: string[]
   category: string
   difficulty: "Beginner" | "Intermediate" | "Advanced"
-  status: "Live" | "In Development" | "Portfolio Piece"
+  status: "Live" | "In Development" | "Creation"
   image: string
   githubUrl?: string
   liveUrl?: string
@@ -49,28 +49,356 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Mix & Pix Store",
-    tagline: "E-commerce platform with personalized apparel customization",
-    description: "E-commerce platform with Shopify integration for personalized apparel customization",
+    title: "Multi-tenant Identity Microservice",
+    tagline: "Comprehensive authentication system with RBAC, multi-tenancy, and advanced security features",
+    description: "Comprehensive authentication system with RBAC, multi-tenancy, and advanced security features",
     longDescription:
-      "A comprehensive e-commerce solution that allows customers to customize apparel with their own designs. Features real-time preview, order tracking, and seamless payment processing.",
-    technologies: ["React", "Shopify", "Node.js", "Stripe", "AWS"],
-    category: "E-commerce",
+      "A secure identity microservice providing JWT-based authentication, role-based access control (RBAC), multi-tenancy, session management, audit logging, and multi-factor authentication. Built with FastAPI and PostgreSQL for enterprise-grade security and scalability.",
+    technologies: ["FastAPI", "PostgreSQL", "Redis", "JWT", "Message Queue"],
+    category: "API",
     difficulty: "Advanced",
-    status: "Live",
-    image: "/ecommerce-store-interface.png",
-    githubUrl: "https://github.com/example/mix-pix-store",
-    liveUrl: "https://mixpixstore.com",
-    challenges: ["Complex customization interface", "Real-time preview generation", "Inventory management"],
-    solutions: ["Canvas API for design preview", "WebSocket for real-time updates", "Automated inventory sync"],
-    features: ["Custom design upload", "Real-time preview", "Order tracking", "Payment processing"],
-    dateCompleted: "2023-12-15",
-    metrics: ["5,000+ monthly users", "25% increase in conversion rate", "$15K monthly revenue"],
-    primaryTech: "React",
-    primaryTechIcon: <Code />,
+    status: "Creation",
+    image: "/projects/1.png",
+    githubUrl: "https://github.com/elijahondiek/Multi-tenant-Identity-Microservice",
+    liveUrl: "https://identity.elijah-ondiek.site/docs",
+    challenges: ["Multi-tenant data isolation", "Secure session management", "Fine-grained access control", "Performance at scale"],
+    solutions: ["Tenant-scoped database queries", "Redis cache for token validation", "Hierarchical RBAC model", "Optimized caching strategies"],
+    features: [
+      "JWT-based authentication", 
+      "Role-based access control", 
+      "Multi-tenancy support", 
+      "Account security (lockout, tracking)", 
+      "One device, one session policy",
+      "Audit logging"
+    ],
+    dateCompleted: "2024-02-15",
+    primaryTech: "FastAPI",
+    primaryTechIcon: <Server />,
   },
   {
     id: 2,
+    title: "ShadowCoach: Boxing Form Analyzer",
+    tagline: "Computer vision-based boxing technique analysis using AI and pose estimation",
+    description: "Computer vision-based boxing technique analysis using AI and pose estimation",
+    longDescription:
+      "A computer vision-based boxing form analysis application that uses AI to analyze boxing techniques, compare them to reference techniques, and provide detailed feedback. Part of the larger ShadowCoach fitness platform, focusing on jab technique analysis using pose estimation.",
+    technologies: ["Python", "OpenCV", "MediaPipe", "FastAPI", "NumPy"],
+    category: "AI/ML",
+    difficulty: "Advanced",
+    status: "Creation",
+    image: "/projects/ShadowCoach_ Boxing Form Analyzer.png",
+    githubUrl: "https://github.com/elijahondiek/ShadowCoach-Boxer",
+    challenges: ["Real-time pose detection", "Technique comparison algorithms", "Actionable feedback generation", "Handling different speeds and orientations"],
+    solutions: ["MediaPipe pose estimation", "Dynamic Time Warping", "Reference technique comparison", "Visualization tools"],
+    features: [
+      "Real-time pose detection", 
+      "Jab technique analysis", 
+      "Reference comparison", 
+      "Detailed feedback", 
+      "Technique visualization",
+      "API integration"
+    ],
+    dateCompleted: "2024-01-20",
+    primaryTech: "Python",
+    primaryTechIcon: <Bot />,
+  },
+  {
+    id: 3,
+    title: "Katiba360°",
+    tagline: "Constitutional education platform making Kenya's constitution accessible to everyone",
+    description: "Constitutional education platform making Kenya's constitution accessible to everyone",
+    longDescription:
+      "A comprehensive platform that makes Kenya's constitution accessible, understandable, and actionable for all citizens through simple language and practical examples, regardless of their educational background, language preference, or technical expertise.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "ShadCN UI", "FastAPI"],
+    category: "Education",
+    difficulty: "Advanced",
+    status: "Live",
+    image: "/projects/katiba360.png",
+    githubUrl: "https://github.com/elijahondiek/katiba360",
+    liveUrl: "https://katiba360.com/",
+    challenges: ["Simplifying complex legal language", "Multi-language support", "Accessible design for all devices including feature phones"],
+    solutions: ["Plain language rewriting", "i18n implementation for multiple languages", "Progressive enhancement for broad device support"],
+    features: ["Chapter-by-chapter constitution breakdown", "Rights explorer", "Search functionality", "Practical examples of constitutional applications"],
+    dateCompleted: "2024-03-15",
+    primaryTech: "Next.js",
+    primaryTechIcon: <Code />,
+  },
+  {
+    id: 4,
+    title: "GraphQL e-commerce API",
+    tagline: "Node.js server with GraphQL for optimized e-commerce operations and product reviews",
+    description: "Node.js server with GraphQL for optimized e-commerce operations and product reviews",
+    longDescription:
+      "An e-commerce API that runs on a Node.js server and uses GraphQL as a query language. Optimizes CRUD operation queries and provides robust support for product reviews and ratings, allowing clients to request exactly the data they need.",
+    technologies: ["Node.js", "GraphQL", "MongoDB", "Express", "Apollo Server"],
+    category: "API",
+    difficulty: "Intermediate",
+    status: "Creation",
+    image: "/projects/GraphQL eCommerce Backend.png",
+    githubUrl: "https://github.com/elijahondiek/GraphQL-e-commerce-API",
+    challenges: ["Optimizing complex queries", "Implementing efficient review system", "Handling product relationships"],
+    solutions: ["GraphQL schema design", "Resolver optimization", "MongoDB aggregation pipelines"],
+    features: ["Optimized CRUD operations", "Product review & rating system", "GraphQL playground"],
+    dateCompleted: "2023-10-20",
+    primaryTech: "GraphQL",
+    primaryTechIcon: <Server />,
+  },
+  {
+    id: 5,
+    title: "AWS Serverless API",
+    tagline: "Serverless expense tracker API using AWS Lambda, API Gateway, and DynamoDB",
+    description: "Serverless expense tracker API using AWS Lambda, API Gateway, and DynamoDB",
+    longDescription:
+      "A serverless AWS expense tracker API built with AWS Lambda functions, API Gateway, and DynamoDB. Provides a scalable, cost-effective solution for tracking and managing expenses without maintaining server infrastructure.",
+    technologies: ["AWS Lambda", "API Gateway", "DynamoDB", "Node.js", "Serverless Framework"],
+    category: "Cloud",
+    difficulty: "Advanced",
+    status: "Creation",
+    image: "/projects/AWS-Serverless-API.png",
+    githubUrl: "https://github.com/elijahondiek/AWS-Serverless-API",
+    liveUrl: "https://github.com/elijahondiek/AWS-Serverless-API",
+    challenges: ["Serverless architecture design", "NoSQL data modeling", "API authentication and security"],
+    solutions: ["Serverless Framework deployment", "DynamoDB single-table design", "AWS IAM roles and policies"],
+    features: ["Expense CRUD operations", "Serverless architecture", "NoSQL database", "RESTful API endpoints"],
+    dateCompleted: "2023-11-30",
+    primaryTech: "AWS Lambda",
+    primaryTechIcon: <Server />,
+  },
+  {
+    id: 6,
+    title: "Social Media Unified Microservice",
+    tagline: "FastAPI backend with PostgreSQL for user accounts, posts, and voting system",
+    description: "FastAPI backend with PostgreSQL for user accounts, posts, and voting system",
+    longDescription:
+      "A social media microservice that manages user account creation with access tokens, post creation, update, and deletion, as well as upvotes and downvotes. Built with FastAPI and powered by a Postgres database.",
+    technologies: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Python", "Swagger UI"],
+    category: "API",
+    difficulty: "Intermediate",
+    status: "Creation",
+    image: "/projects/Social Media Unified Microservice.png",
+    githubUrl: "https://github.com/elijahondiek/Social-Media-App-Microservice",
+    liveUrl: "https://fastapi-develie.herokuapp.com/",
+    challenges: ["Token-based authentication", "Database relationship modeling", "API performance optimization"],
+    solutions: ["JWT authentication", "SQLAlchemy ORM relationships", "Efficient query design"],
+    features: ["User account management", "Post CRUD operations", "Upvote/downvote system", "API documentation with Swagger UI"],
+    dateCompleted: "2023-09-15",
+    primaryTech: "FastAPI",
+    primaryTechIcon: <Server />,
+  },
+  {
+    id: 7,
+    title: "AI-Powered WhatsApp Assistant",
+    tagline: "WhatsApp bot with Twilio, Google Dialogflow, and Node.js server",
+    description: "WhatsApp bot with Twilio, Google Dialogflow, and Node.js server",
+    longDescription:
+      "A WhatsApp bot built with Twilio as the messaging client, Google's Dialogflow for intent filtering, and runs on a Node.js server. Provides intelligent conversational interactions through natural language processing.",
+    technologies: ["Node.js", "Twilio", "Dialogflow", "Express.js", "Google Cloud Platform"],
+    category: "AI/Bot",
+    difficulty: "Intermediate",
+    status: "Live",
+    image: "/projects/AI-Powered WhatsApp Assistant (Twilio & Dialogflow).png",
+    githubUrl: "https://github.com/elijahondiek/AI-Powered-WhatsApp-Student-Assistant-Twilio-Dialogflow-",
+    challenges: ["Intent recognition", "Webhook integration", "Conversation flow management"],
+    solutions: ["Dialogflow intent configuration", "Twilio messaging API", "Express.js webhook endpoints"],
+    features: [
+      "Natural language understanding",
+      "Intent-based responses",
+      "Webhook integration",
+      "Conversational flow management",
+    ],
+    dateCompleted: "2023-08-10",
+    primaryTech: "Dialogflow",
+    primaryTechIcon: <Bot />,
+  },
+  {
+    id: 8,
+    title: "Bookmarks Manager Microservice",
+    tagline: "RESTful API for bookmark management with user authentication and visit tracking",
+    description: "RESTful API for bookmark management with user authentication and visit tracking",
+    longDescription:
+      "A bookmark manager microservice that allows for simple bookmark management. Features user creation and authentication with access tokens, full CRUD operations for bookmarks, and link visit tracking with usage statistics.",
+    technologies: ["FastAPI", "PostgreSQL", "JWT", "REST API"],
+    category: "Productivity",
+    difficulty: "Intermediate",
+    status: "Creation",
+    image: "/projects/Bookmarks-Manager-Microservice.png",
+    githubUrl: "https://github.com/elijahondiek/Bookmarks-Manager-Microservice",
+    challenges: ["Secure authentication", "Visit tracking implementation", "Statistics aggregation"],
+    solutions: ["JWT token authentication", "Click tracking middleware", "MongoDB aggregation pipelines"],
+    features: ["User authentication", "CRUD operations", "Visit tracking", "Usage statistics"],
+    dateCompleted: "2023-07-25",
+    primaryTech: "FastAPI",
+    primaryTechIcon: <Server />,
+  },
+  {
+    id: 9,
+    title: "Threaded Comments Engine",
+    tagline: "Recursive comment system using Common Table Expressions (CTE) for MySQL in Flask",
+    description: "Recursive comment system using Common Table Expressions (CTE) for MySQL in Flask",
+    longDescription:
+      "An efficient threaded comment system for blogs or CMS platforms, leveraging MySQL's Common Table Expressions (CTE) to implement hierarchical comment structures with unlimited nesting depth while maintaining query performance.",
+    technologies: ["Python", "Flask", "MySQL", "SQLAlchemy", "CTEs"],
+    category: "Web App",
+    difficulty: "Intermediate",
+    status: "Creation",
+    image: "/projects/Nested Comments Engine.png",
+    githubUrl: "https://github.com/elijahondiek/threaded-comments-cte",
+    challenges: ["Implementing unlimited comment nesting", "Maintaining query performance at scale", "Preserving comment hierarchies"],
+    solutions: ["Common Table Expressions (CTEs)", "Optimized recursive queries", "Efficient tree traversal algorithms"],
+    features: ["Unlimited comment nesting", "Efficient hierarchical queries", "Comment voting", "Thread collapsing"],
+    dateCompleted: "2023-08-15",
+    primaryTech: "MySQL",
+    primaryTechIcon: <FileCode />,
+  },
+  {
+    id: 10,
+    title: "Full Circle Health & Wellness",
+    tagline: "Next.js 14 blog with TypeScript, Sanity CMS, and holistic health content",
+    description: "Next.js 14 blog with TypeScript, Sanity CMS, and holistic health content",
+    longDescription:
+      "A modern health and wellness blog built with Next.js 14, featuring a headless CMS for content management and optimized for SEO and performance.",
+    technologies: ["Next.js 14", "TypeScript", "Sanity CMS", "Tailwind CSS", "Vercel"],
+    category: "Blog",
+    difficulty: "Intermediate",
+    status: "Live",
+    image: "/projects/full-circle.png",
+    githubUrl: "https://github.com/elijahondiek/fullcircle-health-and-fitness",
+    liveUrl: "https://fullcirclehealthandfitness.vercel.app/",
+    challenges: ["SEO optimization", "Content management", "Performance optimization"],
+    solutions: ["Static site generation", "Image optimization", "Structured data markup"],
+    features: ["Content management", "SEO optimization"],
+    dateCompleted: "2024-01-20",
+    primaryTech: "Next.js",
+    primaryTechIcon: <Code />,
+  },
+  {
+    id: 11,
+    title: "Triotech Software Solutions",
+    tagline: "Corporate website showcasing custom software development services",
+    description: "Corporate website showcasing custom software development services",
+    longDescription:
+      "A professional corporate website for a software development company, featuring service portfolios, team profiles, and client testimonials.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "Vercel"],
+    category: "Corporate",
+    difficulty: "Beginner",
+    status: "Live",
+    image: "/projects/triotech.png",
+    githubUrl: "https://github.com/elijahondiek/triotech-website",
+    liveUrl: "https://triotech-website.vercel.app/",
+    challenges: ["Professional design", "Performance optimization", "Contact form integration"],
+    solutions: ["Modern UI/UX design", "Image optimization", "Serverless form handling"],
+    features: ["Service showcase", "Team profiles", "Contact forms", "Testimonials"],
+    dateCompleted: "2023-12-05",
+    primaryTech: "Next.js",
+    primaryTechIcon: <Code />,
+  },
+  {
+    id: 12,
+    title: "Mema Africa",
+    tagline: "Marketing consulting website for boutique firm with value-driven solutions",
+    description: "Marketing consulting website for boutique firm with value-driven solutions",
+    longDescription:
+      "A sleek marketing website for a boutique consulting firm specializing in African markets, featuring case studies and service offerings.",
+    technologies: ["React", "CSS3", "Bootstrap5"],
+    category: "Marketing",
+    difficulty: "Beginner",
+    status: "Live",
+    image: "/projects/memaafrica.png",
+    githubUrl: "https://www.memaafrica.org/",
+    liveUrl: "https://www.memaafrica.org/",
+    challenges: ["Brand representation", "Content organization", "Mobile optimization"],
+    solutions: ["Custom design system", "Content strategy", "Progressive web app"],
+    features: ["Case studies", "Service pages"],
+    dateCompleted: "2023-11-10",
+    primaryTech: "React",
+    primaryTechIcon: <Layout />,
+  },
+  {
+    id: 13,
+    title: "Itesyl Technologies",
+    tagline: "Fintech website specializing in real estate banking services",
+    description: "Fintech website specializing in real estate banking services",
+    longDescription:
+      "A fintech platform website showcasing innovative banking solutions for the real estate industry, with secure client portals and service information.",
+    technologies: ["React", "CSS3", "Bootstrap5"],
+    category: "Fintech",
+    difficulty: "Advanced",
+    status: "Live",
+    image: "/projects/itesyl.png",
+    githubUrl: "https://itesyl.netlify.app/",
+    liveUrl: "https://itesyl.netlify.app/",
+    challenges: ["Security compliance", "Financial data handling", "User authentication"],
+    solutions: ["Multi-factor authentication", "Encrypted data transmission", "Compliance frameworks"],
+    features: ["Client portals", "Service calculator", "Secure messaging", "Document upload"],
+    dateCompleted: "2024-02-14",
+    primaryTech: "React",
+    primaryTechIcon: <Layout />,
+  },
+  {
+    id: 14,
+    title: "Teksade: Tech Community HQ",
+    tagline: "Tech community discovery platform with Next.js, TypeScript, and Prisma",
+    description: "Tech community discovery platform with Next.js, TypeScript, and Prisma",
+    longDescription:
+      "Discover the most vibrant and engaged tech communities. Teksade is an easier and faster tech community discovery platform, helping users find their place among like-minded individuals in the tech world.",
+    technologies: ["Next.js 13", "TypeScript", "Prisma", "TRPC", "Clerk", "TailwindCSS"],
+    category: "Web App",
+    difficulty: "Intermediate",
+    status: "Live",
+    image: "/projects/teksade.png",
+    githubUrl: "https://github.com/elijahondiek/Teksade-The-Tech-Community-HQ",
+    liveUrl: "https://teksade.vercel.app/",
+    challenges: ["Community data organization", "User authentication", "Real-time updates", "Image storage"],
+    solutions: ["Prisma ORM for data modeling", "Clerk for user management", "TRPC for type-safe APIs", "Firebase for image storage"],
+    features: ["Community discovery", "User profiles", "Community listings", "Search functionality", "Email notifications"],
+    dateCompleted: "2024-03-01",
+    primaryTech: "Next.js",
+    primaryTechIcon: <Code />,
+  },
+  {
+    id: 15,
+    title: "LiteraryServe",
+    tagline: "Academic blog platform for student authors and tutors",
+    description: "Academic blog platform for student authors and tutors",
+    longDescription:
+      "A custom blog platform designed for students to showcase their academic writing and creative work. Features author profiles, post categorization, and a clean, reader-friendly interface for educational content.",
+    technologies: ["Next.js", "Sanity CMS", "TailwindCSS", "Vercel", "TypeScript"],
+    category: "Blog",
+    difficulty: "Intermediate",
+    status: "Live",
+    image: "/projects/literaryserve.png",
+    githubUrl: "https://github.com/elijahondiek/literaryserve",
+    liveUrl: "https://literaryserve.vercel.app/",
+    challenges: ["Content management for multiple authors", "Academic content presentation", "User-friendly author interfaces"],
+    solutions: ["Headless CMS integration", "Custom author profiles", "Responsive design for all devices"],
+    features: ["Author profiles", "Categorized content", "About page", "Clean reading experience", "Mobile-optimized layout"],
+    dateCompleted: "2023-12-10",
+    primaryTech: "Next.js",
+    primaryTechIcon: <Code />,
+  },
+  {
+    id: 16,
+    title: "Fitspire",
+    tagline: "Modern fitness center website with interactive features and BMI calculator",
+    description: "Modern fitness center website with interactive features and BMI calculator",
+    longDescription:
+      "A comprehensive website for a fitness community featuring professional trainers, modern equipment, and gym facilities. Includes interactive elements like a BMI calculator, class schedules, team profiles, and gallery.",
+    technologies: ["React", "Next.js", "TailwindCSS", "Framer Motion", "Vercel"],
+    category: "Corporate",
+    difficulty: "Intermediate",
+    status: "Live",
+    image: "/projects/fitspire.png",
+    liveUrl: "https://fitspire.vercel.app/",
+    githubUrl: "https://github.com/elijahondiek/fitspire",
+    challenges: ["Interactive feature implementation", "Responsive design for fitness content", "Visual appeal for fitness audience"],
+    solutions: ["Custom React components", "Mobile-first design approach", "Engaging animations and transitions"],
+    features: ["BMI calculator", "Class schedules", "Team profiles", "Gallery", "Pricing plans", "Contact form"],
+    dateCompleted: "2024-01-05",
+    primaryTech: "React",
+    primaryTechIcon: <Layout />,
+  },
+  {
+    id: 17,
     title: "GraphQL e-commerce API",
     tagline: "Scalable Node.js server with GraphQL queries and CRUD operations",
     description: "Scalable Node.js server with GraphQL queries, CRUD operations, and review system",
@@ -79,7 +407,7 @@ const projects: Project[] = [
     technologies: ["Node.js", "GraphQL", "MongoDB", "Express", "JWT"],
     category: "API",
     difficulty: "Advanced",
-    status: "Portfolio Piece",
+    status: "Creation",
     image: "/graphql-api-schema-diagram.png",
     githubUrl: "https://github.com/example/graphql-ecommerce",
     challenges: ["Complex query optimization", "Authentication middleware", "Data relationship management"],
@@ -91,7 +419,7 @@ const projects: Project[] = [
     primaryTechIcon: <Server />,
   },
   {
-    id: 3,
+    id: 18,
     title: "AWS Serverless Expense Tracker",
     tagline: "Cloud-native expense tracking with Lambda functions and DynamoDB",
     description: "Cloud-native expense tracking with Lambda functions, API Gateway, and DynamoDB",
@@ -113,7 +441,7 @@ const projects: Project[] = [
     primaryTechIcon: <Server />,
   },
   {
-    id: 4,
+    id: 19,
     title: "Social Media API",
     tagline: "FastAPI backend with PostgreSQL, user management, and voting system",
     description: "FastAPI backend with PostgreSQL, user management, posts, and voting system",
@@ -122,7 +450,7 @@ const projects: Project[] = [
     technologies: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Redis", "Docker"],
     category: "API",
     difficulty: "Intermediate",
-    status: "Portfolio Piece",
+    status: "Creation",
     image: "/placeholder.svg?height=300&width=400&query=social media api endpoints",
     githubUrl: "https://github.com/example/social-media-api",
     challenges: ["Real-time notifications", "Content moderation", "Scalable voting system"],
@@ -134,7 +462,7 @@ const projects: Project[] = [
     primaryTechIcon: <Server />,
   },
   {
-    id: 5,
+    id: 20,
     title: "Student Assistant Chat Bot",
     tagline: "WhatsApp integration with Twilio, Google Dialogflow, and Node.js",
     description: "WhatsApp integration with Twilio, Google Dialogflow, and Node.js backend",
@@ -144,8 +472,8 @@ const projects: Project[] = [
     category: "AI/Bot",
     difficulty: "Intermediate",
     status: "Live",
-    image: "/placeholder.svg?height=300&width=400&query=whatsapp chatbot interface",
-    githubUrl: "https://github.com/example/student-assistant-bot",
+    image: "/projects/AI-Powered WhatsApp Assistant (Twilio & Dialogflow).png",
+    githubUrl: "https://github.com/elijahondiek/AI-Powered-WhatsApp-Student-Assistant-Twilio-Dialogflow-",
     challenges: ["Natural language processing", "Context management", "Multi-platform integration"],
     solutions: ["Dialogflow intent mapping", "Session state management", "Webhook optimization"],
     features: [
@@ -160,7 +488,7 @@ const projects: Project[] = [
     primaryTechIcon: <Bot />,
   },
   {
-    id: 6,
+    id: 21,
     title: "Bookmarks Manager API",
     tagline: "Authentication system with CRUD operations and usage statistics",
     description: "Authentication system with CRUD operations, link tracking, and usage statistics",
@@ -169,9 +497,9 @@ const projects: Project[] = [
     technologies: ["Node.js", "Express", "MongoDB", "JWT", "Chart.js"],
     category: "Productivity",
     difficulty: "Intermediate",
-    status: "Portfolio Piece",
-    image: "/placeholder.svg?height=300&width=400&query=bookmark manager dashboard",
-    githubUrl: "https://github.com/example/bookmarks-manager",
+    status: "Creation",
+    image: "/projects/Bookmarks-Manager-Microservice.png",
+    githubUrl: "https://github.com/elijahondiek/Bookmarks-Manager-Microservice",
     challenges: ["Link metadata extraction", "Usage analytics", "Search optimization"],
     solutions: ["Web scraping for metadata", "Event tracking system", "Elasticsearch integration"],
     features: ["Smart categorization", "Usage analytics", "Search functionality", "Export/import"],
@@ -181,7 +509,7 @@ const projects: Project[] = [
     primaryTechIcon: <Server />,
   },
   {
-    id: 7,
+    id: 22,
     title: "Threaded Replies App",
     tagline: "Python Flask application with nested comment system",
     description: "Python Flask application with MySQL, SQLAlchemy ORM, and nested comment system",
@@ -190,7 +518,7 @@ const projects: Project[] = [
     technologies: ["Python", "Flask", "MySQL", "SQLAlchemy", "Bootstrap"],
     category: "Web App",
     difficulty: "Intermediate",
-    status: "Portfolio Piece",
+    status: "Creation",
     image: "/placeholder.svg?height=300&width=400&query=threaded comments interface",
     githubUrl: "https://github.com/example/threaded-replies",
     challenges: ["Nested comment structure", "Performance optimization", "Real-time updates"],
@@ -201,29 +529,9 @@ const projects: Project[] = [
     primaryTech: "Flask",
     primaryTechIcon: <Server />,
   },
+
   {
-    id: 8,
-    title: "Web Scrapper",
-    tagline: "Python crawler with HTML extraction and results display",
-    description: "Python crawler with URL parsing, HTML tag extraction, and results display",
-    longDescription:
-      "A powerful web scraping tool that can crawl websites, extract specific data based on CSS selectors, and present results in various formats.",
-    technologies: ["Python", "BeautifulSoup", "Scrapy", "Pandas", "Flask"],
-    category: "Data",
-    difficulty: "Intermediate",
-    status: "Portfolio Piece",
-    image: "/placeholder.svg?height=300&width=400&query=web scraping dashboard",
-    githubUrl: "https://github.com/example/web-scrapper",
-    challenges: ["Anti-bot detection", "Dynamic content scraping", "Data cleaning"],
-    solutions: ["Rotating proxies", "Selenium integration", "Data validation pipelines"],
-    features: ["Multi-site scraping", "Data export", "Scheduling", "Error handling"],
-    dateCompleted: "2023-05-18",
-    metrics: ["50+ websites supported", "99% extraction accuracy", "CSV/JSON/Excel export options"],
-    primaryTech: "Python",
-    primaryTechIcon: <FileCode />,
-  },
-  {
-    id: 9,
+    id: 24,
     title: "Full Circle Health & Wellness",
     tagline: "Next.js 14 blog with TypeScript and Sanity CMS",
     description: "Next.js 14 blog with TypeScript, Sanity CMS, and holistic health content",
@@ -245,7 +553,7 @@ const projects: Project[] = [
     primaryTechIcon: <Layout />,
   },
   {
-    id: 10,
+    id: 25,
     title: "Triotech Software Solutions",
     tagline: "Corporate website showcasing custom software development services",
     description: "Corporate website showcasing custom software development services",
@@ -267,19 +575,19 @@ const projects: Project[] = [
     primaryTechIcon: <Code />,
   },
   {
-    id: 11,
+    id: 26,
     title: "Mema Africa",
     tagline: "Marketing consulting website for boutique firm",
     description: "Marketing consulting website for boutique firm with value-driven solutions",
     longDescription:
       "A sleek marketing website for a boutique consulting firm specializing in African markets, featuring case studies and service offerings.",
-    technologies: ["React", "Gatsby", "GraphQL", "Styled Components", "Netlify"],
+    technologies: ["React", "CSS3", "Bootstrap5"],
     category: "Marketing",
     difficulty: "Beginner",
     status: "Live",
-    image: "/placeholder.svg?height=300&width=400&query=african marketing consulting website",
-    githubUrl: "https://github.com/example/mema-africa",
-    liveUrl: "https://mema-africa.com",
+    image: "/projects/memaafrica.png",
+    githubUrl: "https://www.memaafrica.org/",
+    liveUrl: "https://www.memaafrica.org/",
     challenges: ["Brand representation", "Content organization", "Mobile optimization"],
     solutions: ["Custom design system", "Content strategy", "Progressive web app"],
     features: ["Case studies", "Service pages", "Contact forms", "Blog integration"],
@@ -289,19 +597,19 @@ const projects: Project[] = [
     primaryTechIcon: <Layout />,
   },
   {
-    id: 12,
+    id: 27,
     title: "Itesyl Technologies",
     tagline: "Fintech website specializing in real estate banking services",
     description: "Fintech website specializing in real estate banking services",
     longDescription:
       "A fintech platform website showcasing innovative banking solutions for the real estate industry, with secure client portals and service information.",
-    technologies: ["Vue.js", "Nuxt.js", "TypeScript", "Vuetify", "Firebase"],
+    technologies: ["React", "CSS3", "Bootstrap5"],
     category: "Fintech",
     difficulty: "Advanced",
     status: "Live",
-    image: "/placeholder.svg?height=300&width=400&query=fintech real estate banking website",
-    githubUrl: "https://github.com/example/itesyl-technologies",
-    liveUrl: "https://itesyl.com",
+    image: "/projects/itesyl.png",
+    githubUrl: "https://itesyl.netlify.app/",
+    liveUrl: "https://itesyl.netlify.app/",
     challenges: ["Security compliance", "Financial data handling", "User authentication"],
     solutions: ["Multi-factor authentication", "Encrypted data transmission", "Compliance frameworks"],
     features: ["Client portals", "Service calculator", "Secure messaging", "Document upload"],
@@ -382,6 +690,9 @@ export default function ProjectsSidebar() {
 
   // Mouse movement for parallax effects
   useEffect(() => {
+    // Only run on client-side
+    if (typeof window === 'undefined') return
+    
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return
 
@@ -398,6 +709,9 @@ export default function ProjectsSidebar() {
 
   // Keyboard navigation
   useEffect(() => {
+    // Only run on client-side
+    if (typeof window === 'undefined') return
+    
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowUp" || e.key === "ArrowDown") {
         e.preventDefault()
@@ -430,8 +744,10 @@ export default function ProjectsSidebar() {
     setSelectedProject(project)
     setIsMobileSidebarOpen(false)
 
-    // Update URL with project ID for deep linking
-    window.history.replaceState(null, "", `#projects-${project.id}`)
+    // Update URL with project ID for deep linking - only on client side
+    if (typeof window !== 'undefined') {
+      window.history.replaceState(null, "", `#projects-${project.id}`)
+    }
 
     // Simulate loading for smoother transitions
     setTimeout(() => {
@@ -445,7 +761,7 @@ export default function ProjectsSidebar() {
         return "#00ff88"
       case "In Development":
         return "#ffd700"
-      case "Portfolio Piece":
+      case "Creation":
         return "#00d4ff"
       default:
         return "#00d4ff"
@@ -858,30 +1174,12 @@ export default function ProjectsSidebar() {
                   </div>
                 </div>
 
-                {/* Metrics */}
-                {selectedProject.metrics && (
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4 flex items-center">
-                      <Star className="w-5 h-5 mr-2 text-[#ffd700]" />
-                      Key Metrics
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {selectedProject.metrics.map((metric, index) => (
-                        <div key={index} className="glass-card p-4 text-center rounded-lg">
-                          <p className="text-[#b4bcd0]">{metric}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                {/* Metrics section removed as requested */}
 
-                {/* Project Timeline */}
-                <div className="flex items-center justify-between glass-card p-4 rounded-lg">
-                  <div className="flex items-center">
-                    <Calendar className="w-5 h-5 mr-2 text-[#00d4ff]" />
-                    <span className="text-[#b4bcd0]">Completed on</span>
-                  </div>
-                  <span>{new Date(selectedProject.dateCompleted).toLocaleDateString()}</span>
+                {/* Project Timeline - Less Dominant */}
+                <div className="text-sm text-[#b4bcd0] flex items-center">
+                  <Calendar className="w-4 h-4 mr-1 opacity-60" />
+                  <span className="opacity-60">Completed: {new Date(selectedProject.dateCompleted).toLocaleDateString()}</span>
                 </div>
 
                 {/* Related Projects */}

@@ -109,7 +109,7 @@ export default function InteractiveStatsPanel() {
 
   return (
     <div
-      className={`fixed top-4 right-4 z-50 transition-all duration-300 ${isExpanded ? "w-64" : "w-12"} cursor-pointer`}
+      className={`fixed md:top-4 md:right-4 top-16 right-4 z-40 transition-all duration-300 ${isExpanded ? "w-64" : "w-12"} cursor-pointer`}
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
       onClick={() => setIsExpanded(!isExpanded)}
