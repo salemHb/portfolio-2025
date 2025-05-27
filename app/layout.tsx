@@ -77,7 +77,7 @@ const baseUrl = isProduction
           url: '/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: "Elijah Ondiek - Professional Software and Web Engineer",
+          alt: "Elijah Ondiek - Professional Software Engineer",  
           type: 'image/jpeg',
         },
         {

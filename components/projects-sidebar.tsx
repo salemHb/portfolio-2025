@@ -1004,7 +1004,8 @@ export default function ProjectsSidebar() {
                       <button
                         key={project.id}
                         onClick={() => handleProjectSelect(project)}
-                        className="glass-card p-4 rounded-lg text-left transition-all duration-300"
+                        className="glass-card p-4 rounded-lg text-left transition-all duration-300 hover:scale-105 hover:shadow-lg w-full"
+                        aria-label={`View details for ${project.title}`}
                       >
                         <div className="flex items-center space-x-2 mb-2">
                           <div
@@ -1025,7 +1026,6 @@ export default function ProjectsSidebar() {
                         </div>
                       </button>
                     ))}
-
                     {getRelatedProjects().length === 0 && (
                       <div className="col-span-3 glass-card p-6 text-center">
                         <p className="text-[#b4bcd0]">No related projects found</p>
