@@ -411,7 +411,7 @@ export default function SidebarNavigationLayout({
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
                         <div
-                          className="w-10 h-10 rounded-full flex items-center justify-center mr-3 backdrop-blur-md border-2 transition-all duration-300 hover:scale-110"
+                          className="w-10 h-10 rounded-full flex items-center justify-center mr-3 backdrop-blur-md border-2 transition-all duration-300"
                           style={{
                             backgroundColor: `${getCategoryColor(
                               item.category
@@ -429,15 +429,6 @@ export default function SidebarNavigationLayout({
                           </p>
                         </div>
                       </div>
-                      <div
-                        className="w-2 h-2 rounded-full"
-                        style={{
-                          backgroundColor:
-                            contentType === "projects" && item.status
-                              ? getStatusColor(item.status)
-                              : "#00ff88",
-                        }}
-                      ></div>
                     </div>
                   </button>
                 ))}

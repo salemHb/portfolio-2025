@@ -757,16 +757,17 @@ export default function ProjectsSidebar() {
                   <button
                     key={project.id}
                     onClick={() => handleProjectSelect(project)}
-                    className={`w-full text-left p-3 rounded-lg transition-all duration-300 hover:scale-[1.02] ${
+                    className={`w-full text-left p-3 rounded-lg  ${
                       selectedProject?.id === project.id
-                        ? "bg-gradient-to-r from-[#00d4ff]/20 to-[#00ff88]/20 border-l-4 border-[#00d4ff]"
+                        ? " border-l-4 border-[#00d4ff]"
                         : "glass-card hover:bg-white/10"
                     }`}
+                    style={{ transform: "none" }}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
                         <div
-                          className="w-10 h-10 rounded-lg flex items-center justify-center mr-3 transition-all duration-300 hover:scale-105 hover:rounded-full"
+                          className="w-10 h-10 rounded-full flex items-center justify-center mr-3"
                           style={{
                             backgroundColor: `${getCategoryColor(project.category)}15`,
                             color: getCategoryColor(project.category),
@@ -779,10 +780,6 @@ export default function ProjectsSidebar() {
                           <p className="text-[#b4bcd0] text-xs truncate max-w-[180px]">{project.tagline}</p>
                         </div>
                       </div>
-                      <div
-                        className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: getStatusColor(project.status) }}
-                      ></div>
                     </div>
                   </button>
                 ))}
@@ -976,7 +973,7 @@ export default function ProjectsSidebar() {
                       <button
                         key={project.id}
                         onClick={() => handleProjectSelect(project)}
-                        className="glass-card p-4 rounded-lg text-left hover:scale-105 transition-all duration-300"
+                        className="glass-card p-4 rounded-lg text-left transition-all duration-300"
                       >
                         <div className="flex items-center space-x-2 mb-2">
                           <div

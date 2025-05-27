@@ -102,7 +102,7 @@ export default function ThemeCustomizationPanel() {
       {/* Settings Button - positioned above back-to-top */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-20 sm:bottom-24 right-4 sm:right-8 w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl flex items-center justify-center z-40 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:-translate-y-1"
+        className="fixed bottom-24 sm:bottom-24 right-4 sm:right-8 w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl flex items-center justify-center z-40 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:-translate-y-1"
         aria-label="Open theme settings"
       >
         <Settings className="w-6 h-6 animate-spin-slow" />

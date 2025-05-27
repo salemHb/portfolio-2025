@@ -74,8 +74,8 @@ export default function About() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            Andela Software Engineer contracting with Safaricom PLC, building
-            solutions that impact millions of lives across Kenya.
+            Software Engineer (Andela x Safaricom), building solutions that
+            impact millions of lives across Kenya.
           </motion.h2>
 
           {/* Secondary Statement */}

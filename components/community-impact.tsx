@@ -854,7 +854,7 @@ export default function CommunityImpact() {
           </p>
           <GradientMagicButton
                   href="#contact"
-                  className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105 text-white"
+                  className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105"
                   style={{ color: "#ffffff" }}
                   accentColor="primary"
                 >
