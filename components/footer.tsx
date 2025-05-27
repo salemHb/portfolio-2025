@@ -25,7 +25,45 @@ export default function Footer() {
   }, [])
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
+    // Get current settings from localStorage
+    const savedSettings = localStorage.getItem("theme-settings")
+    if (savedSettings) {
+      try {
+        const parsedSettings = JSON.parse(savedSettings)
+        // Toggle the color scheme
+        const newColorScheme = parsedSettings.colorScheme === 'dark' ? 'light' : 'dark'
+        
+        // Update settings
+        const updatedSettings = {
+          ...parsedSettings,
+          colorScheme: newColorScheme
+        }
+        
+        // Save back to localStorage
+        localStorage.setItem("theme-settings", JSON.stringify(updatedSettings))
+        
+        // Apply the theme settings
+        const root = document.documentElement
+        root.setAttribute("data-theme", newColorScheme)
+        
+        // Apply additional text contrast for light mode
+        if (newColorScheme === "light") {
+          document.body.classList.add("light-mode-contrast")
+        } else {
+          document.body.classList.remove("light-mode-contrast")
+        }
+        
+        // Update the theme state
+        setTheme(newColorScheme)
+      } catch (error) {
+        console.error("Failed to parse theme settings from localStorage:", error)
+        // Fallback to simple toggle
+        setTheme(theme === 'dark' ? 'light' : 'dark')
+      }
+    } else {
+      // No settings found, use simple toggle
+      setTheme(theme === 'dark' ? 'light' : 'dark')
+    }
   }
 
   const navLinks = [

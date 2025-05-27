@@ -142,11 +142,11 @@ export default function Contact() {
           if (window.innerWidth <= 768) {
             window.location.href = "tel:+25476****877"
           } else {
-            copyToClipboard("+254768144877", "phone")
+            copyToClipboard("+25476****877", "phone")
           }
         } else {
           // Fallback or log if window is not defined (e.g., during SSR if this action could be triggered)
-          copyToClipboard("+254768144877", "phone") 
+          copyToClipboard("+25476****877", "phone") 
         }
       },
       copyable: true,
@@ -271,21 +271,22 @@ export default function Contact() {
               Direct Communication
             </h3>
 
-            <div className="space-y-4">
+            <div className="space-y-4 w-full max-w-full overflow-x-hidden">
               {contactMethods.map((method) => (
                 <div
                   key={method.id}
-                  className="flex items-center justify-between p-4 glass-card rounded-lg cursor-pointer hover:scale-105 transition-all duration-300"
+                  className="flex items-center justify-between p-4 glass-card rounded-lg cursor-pointer hover:scale-105 transition-all duration-300 w-full"
                   onClick={method.action}
+                  style={{ transform: "none" }}
                 >
-                  <div className="flex items-center space-x-3">
-                    <div className="text-[#00d4ff]">{method.icon}</div>
-                    <div>
+                  <div className="flex items-center space-x-3 min-w-0 flex-1">
+                    <div className="text-[#00d4ff] flex-shrink-0">{method.icon}</div>
+                    <div className="min-w-0 flex-1">
                       <p className="font-medium">{method.label}</p>
-                      <p className="text-[#b4bcd0] text-sm">{method.value}</p>
+                      <p className="text-[#b4bcd0] text-sm truncate">{method.value}</p>
                     </div>
                   </div>
-                  <div className="text-[#b4bcd0]">
+                  <div className="text-[#b4bcd0] ml-3 flex-shrink-0">
                     {copiedItem === method.id ? (
                       <CheckCircle className="w-5 h-5 text-[#00ff88]" />
                     ) : (
