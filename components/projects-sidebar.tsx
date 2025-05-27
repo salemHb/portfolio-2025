@@ -734,11 +734,11 @@ export default function ProjectsSidebar() {
                     key={category}
                     onClick={() => setActiveCategory(category)}
                     className={`px-2 py-1 text-xs rounded-lg transition-all duration-300 ${
-                      activeCategory === category ? "text-[#0a0f1c]" : "glass-card hover:text-[#00d4ff]"
+                      activeCategory === category ? "text-[#ffff]" : "glass-card hover:text-[#00d4ff]"
                     }`}
                     style={
                       activeCategory === category
-                        ? { backgroundImage: "linear-gradient(to right, #00d4ff, #00ff88)" }
+                        ? { backgroundColor: "var(--accent-primary)", color: "#ffff" }
                         : {}
                     }
                   >

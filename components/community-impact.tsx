@@ -344,16 +344,16 @@ export default function CommunityImpact() {
                 : {}
             }
           >
-            <Award className="w-5 h-5" style={activeTab === "speaking" ? { color: '#0a0f1c' } : {}} />
-            <span className="hidden sm:inline" style={activeTab === "speaking" ? { color: '#0a0f1c' } : {}}>Speaking Engagements</span>
-            <span className="sm:hidden" style={activeTab === "speaking" ? { color: '#0a0f1c' } : {}}>Speaking</span>
+            <Award className="w-5 h-5" style={activeTab === "speaking" ? { color: '#ffff' } : {}} />
+            <span className="hidden sm:inline" style={activeTab === "speaking" ? { color: '#ffff' } : {}}>Speaking Engagements</span>
+            <span className="sm:hidden" style={activeTab === "speaking" ? { color: '#ffff' } : {}}>Speaking</span>
           </button>
 
           <button
             onClick={() => handleTabChange("leadership")}
             className={cn(
               "flex items-center space-x-2 px-3 md:px-6 py-2 md:py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105",
-              activeTab === "leadership" ? "text-[#0a0f1c]" : "glass-card hover:text-[#00d4ff]",
+              activeTab === "leadership" ? "text-[#ffff]" : "glass-card hover:text-[#00d4ff]",
             )}
             style={
               activeTab === "leadership"
@@ -362,15 +362,15 @@ export default function CommunityImpact() {
             }
           >
             <Users className="w-5 h-5" />
-            <span className="hidden sm:inline" style={activeTab === "leadership" ? { color: '#0a0f1c' } : {}}>Community Leadership</span>
-            <span className="sm:hidden" style={activeTab === "leadership" ? { color: '#0a0f1c' } : {}}>Leadership</span>
+            <span className="hidden sm:inline" style={activeTab === "leadership" ? { color: '#ffff' } : {}}>Community Leadership</span>
+            <span className="sm:hidden" style={activeTab === "leadership" ? { color: '#ffff' } : {}}>Leadership</span>
           </button>
 
           <button
             onClick={() => handleTabChange("volunteering")}
             className={cn(
               "flex items-center space-x-2 px-3 md:px-6 py-2 md:py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105",
-              activeTab === "volunteering" ? "text-[#0a0f1c]" : "glass-card hover:text-[#00d4ff]",
+              activeTab === "volunteering" ? "text-[#ffff]" : "glass-card hover:text-[#00d4ff]",
             )}
             style={
               activeTab === "volunteering"
@@ -378,9 +378,9 @@ export default function CommunityImpact() {
                 : {}
             }
           >
-            <Heart className="w-5 h-5" style={activeTab === "volunteering" ? { color: '#0a0f1c' } : {}} />
-            <span className="hidden sm:inline" style={activeTab === "volunteering" ? { color: '#0a0f1c' } : {}}>Volunteering & Mentorship</span>
-            <span className="sm:hidden" style={activeTab === "volunteering" ? { color: '#0a0f1c' } : {}}>Volunteering</span>
+            <Heart className="w-5 h-5" style={activeTab === "volunteering" ? { color: '#ffff' } : {}} />
+            <span className="hidden sm:inline" style={activeTab === "volunteering" ? { color: '#ffff' } : {}}>Volunteering & Mentorship</span>
+            <span className="sm:hidden" style={activeTab === "volunteering" ? { color: '#ffff' } : {}}>Volunteering</span>
           </button>
         </div>
 
@@ -418,7 +418,7 @@ export default function CommunityImpact() {
                       key={type}
                       onClick={() => setActiveFilter(type)}
                       className={`px-3 py-1 text-sm rounded-lg transition-all duration-300 hover:scale-105 ${
-                        activeFilter === type ? "text-[#0a0f1c]" : "glass-card hover:text-[#00d4ff]"
+                        activeFilter === type ? "text-[#ffff]" : "glass-card hover:text-[#00d4ff]"
                       }`}
                       style={
                         activeFilter === type
@@ -445,7 +445,7 @@ export default function CommunityImpact() {
                       key={year}
                       onClick={() => setActiveYear(year)}
                       className={`px-3 py-1 text-sm rounded-lg transition-all duration-300 hover:scale-105 ${
-                        activeYear === year ? "text-[#0a0f1c]" : "glass-card hover:text-[#00d4ff]"
+                        activeYear === year ? "text-[#ffff]" : "glass-card hover:text-[#00d4ff]"
                       }`}
                       style={
                         activeYear === year
@@ -855,7 +855,7 @@ export default function CommunityImpact() {
           <GradientMagicButton
                   href="#contact"
                   className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105"
-                  style={{ color: "#ffffff" }}
+                  style={{ color: "#ffff" }}
                   accentColor="primary"
                 >
                   <Users className="w-5 h-5" />

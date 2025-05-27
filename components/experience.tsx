@@ -259,36 +259,36 @@ export default function Experience() {
             onClick={() => setActiveTab("current")}
             className={cn(
               "flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-colors duration-300",
-              activeTab === "current" ? "text-[#0a0f1c]" : "glass-card hover:border-[var(--accent-primary)] hover:shadow-sm",
+              activeTab === "current" ? "text-[#ffff]" : "glass-card hover:border-[var(--accent-primary)] hover:shadow-sm",
             )}
-            style={activeTab === "current" ? { backgroundColor: "var(--accent-primary)", color: "#0a0f1c", transform: "none" } : { transform: "none" }}
+            style={activeTab === "current" ? { backgroundColor: "var(--accent-primary)", color: "#fffff", transform: "none" } : { transform: "none" }}
           >
-            <Briefcase className="w-5 h-5" style={activeTab === "current" ? { color: '#0a0f1c' } : {}} />
-            <span className="hidden sm:inline" style={activeTab === "current" ? { color: '#0a0f1c' } : {}}>Current Role</span>
+            <Briefcase className="w-5 h-5" style={activeTab === "current" ? { color: '#ffff' } : {}} />
+            <span className="hidden sm:inline" style={activeTab === "current" ? { color: '#ffff' } : {}}>Current Role</span>
           </button>
 
           <button
             onClick={() => setActiveTab("previous")}
             className={cn(
               "flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-colors duration-300",
-              activeTab === "previous" ? "text-[#0a0f1c]" : "glass-card hover:border-[var(--accent-primary)] hover:shadow-sm",
+              activeTab === "previous" ? "text-[#ffff]" : "glass-card hover:border-[var(--accent-primary)] hover:shadow-sm",
             )}
-            style={activeTab === "previous" ? { backgroundColor: "var(--accent-primary)", color: "#0a0f1c", transform: "none" } : { transform: "none" }}
+            style={activeTab === "previous" ? { backgroundColor: "var(--accent-primary)", color: "#ffff", transform: "none" } : { transform: "none" }}
           >
-            <History className="w-5 h-5" style={activeTab === "previous" ? { color: '#0a0f1c' } : {}} />
-            <span className="hidden sm:inline" style={activeTab === "previous" ? { color: '#0a0f1c' } : {}}>Previous Experience</span>
+            <History className="w-5 h-5" style={activeTab === "previous" ? { color: '#ffff' } : {}} />
+            <span className="hidden sm:inline" style={activeTab === "previous" ? { color: '#ffff' } : {}}>Previous Experience</span>
           </button>
 
           <button
             onClick={() => setActiveTab("achievements")}
             className={cn(
               "flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-colors duration-300",
-              activeTab === "achievements" ? "text-[#0a0f1c]" : "glass-card hover:border-[var(--accent-primary)] hover:shadow-sm",
+              activeTab === "achievements" ? "text-[#ffff]" : "glass-card hover:border-[var(--accent-primary)] hover:shadow-sm",
             )}
-            style={activeTab === "achievements" ? { backgroundColor: "var(--accent-primary)", color: "#0a0f1c", transform: "none" } : { transform: "none" }}
+            style={activeTab === "achievements" ? { backgroundColor: "var(--accent-primary)", color: "#ffff", transform: "none" } : { transform: "none" }}
           >
-            <Trophy className="w-5 h-5" style={activeTab === "achievements" ? { color: '#0a0f1c' } : {}} />
-            <span className="hidden sm:inline" style={activeTab === "achievements" ? { color: '#0a0f1c' } : {}}>Key Achievements</span>
+            <Trophy className="w-5 h-5" style={activeTab === "achievements" ? { color: '#ffff' } : {}} />
+            <span className="hidden sm:inline" style={activeTab === "achievements" ? { color: '#ffff' } : {}}>Key Achievements</span>
           </button>
         </div>
 
