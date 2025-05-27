@@ -18,10 +18,10 @@ const baseUrl = isProduction
 
   export const metadata: Metadata = {
     title: {
-      default: "Elijah Ondiek | Software Engineer & Web Engineer",
+      default: "Elijah Ondiek | Software Engineer",
       template: "%s | Elijah Ondiek"
     },
-    description: "Explore the work of Elijah Ondiek, a passionate software engineer and web engineer specializing in scalable, high-performance full-stack applications built with React, Next.js, TypeScript, and Python. Delivering user-centric digital solutions with clean code and modern architecture.",
+    description: "Explore the work of Elijah Ondiek, a passionate software engineer specializing in scalable, high-performance full-stack applications built with React, Next.js, TypeScript, and Python. Delivering user-centric digital solutions with clean code and modern architecture.",
     
     keywords: [
       "Elijah Ondiek",
@@ -52,7 +52,7 @@ const baseUrl = isProduction
     creator: "Elijah Ondiek",
     publisher: "Elijah Ondiek",
     generator: 'Next.js',
-    applicationName: "Elijah Ondiek - Software & Web Engineer",
+    applicationName: "Elijah Ondiek - Software Engineer",
     referrer: 'origin-when-cross-origin',
     formatDetection: {
       email: false,
@@ -69,9 +69,9 @@ const baseUrl = isProduction
       type: 'website',
       locale: 'en_US',
       url: baseUrl,
-      title: "Elijah Ondiek | Software Engineer & Web Engineer",
-      description: "Discover Elijah Ondiek, a dedicated software and web engineer crafting innovative full-stack web solutions with React, Next.js, and Python.",
-      siteName: "Elijah Ondiek - Software & Web Engineer",
+      title: "Elijah Ondiek | Software Engineer",
+      description: "Discover Elijah Ondiek, a dedicated software engineer crafting innovative full-stack web solutions with React, Next.js, and Python.",
+      siteName: "Elijah Ondiek - Software Engineer",
       images: [
         {
           url: '/og-image.jpg',
@@ -93,8 +93,8 @@ const baseUrl = isProduction
     // Twitter metadata
     twitter: {
       card: 'summary_large_image',
-      title: "Elijah Ondiek | Software Engineer & Web Engineer",
-      description: "Professional software and web engineer specializing in modern web technologies, scalable full-stack solutions, and clean architecture.",
+      title: "Elijah Ondiek | Software Engineer",
+      description: "Professional software engineer specializing in modern web technologies, scalable full-stack solutions, and clean architecture.",
       creator: '@0chibo_',
       site: '@0chibo_',
       images: [
@@ -102,7 +102,7 @@ const baseUrl = isProduction
           url: '/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: "Elijah Ondiek - Software & Web Engineer",
+          alt: "Elijah Ondiek - Software Engineer",
         }
       ],
     },
