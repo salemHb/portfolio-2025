@@ -13,6 +13,11 @@ interface Toast {
 let toastId = 0
 
 export const showToast = (type: Toast["type"], message: string, duration = 3000) => {
+  if (typeof window === 'undefined') {
+    // Don't run on server
+    console.warn("showToast called on server. Toast not shown: ", message);
+    return;
+  }
   const event = new CustomEvent("show-toast", {
     detail: { id: (++toastId).toString(), type, message, duration },
   })

@@ -20,6 +20,7 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const { theme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -31,6 +32,12 @@ export default function Navigation() {
   ];
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
@@ -58,7 +65,7 @@ export default function Navigation() {
     // Initial check when component mounts
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [navLinks]);
+  }, [navLinks, isMounted]);
 
   // Theme is handled by ThemeCustomizationPanel
 

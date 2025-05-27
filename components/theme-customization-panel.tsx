@@ -27,20 +27,37 @@ export default function ThemeCustomizationPanel() {
     reducedMotion: false,
     highContrast: false,
   })
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    // Load settings from localStorage
-    const savedSettings = localStorage.getItem("theme-settings")
-    if (savedSettings) {
-      setSettings(JSON.parse(savedSettings))
-    }
+    setIsMounted(true)
   }, [])
 
   useEffect(() => {
-    // Save settings to localStorage and apply to document
-    localStorage.setItem("theme-settings", JSON.stringify(settings))
-    applyThemeSettings(settings)
-  }, [settings])
+    if (isMounted) {
+      // Load settings from localStorage
+      const savedSettings = localStorage.getItem("theme-settings")
+      if (savedSettings) {
+        try {
+          const parsedSettings = JSON.parse(savedSettings) as ThemeSettings;
+          // Optional: Add validation for parsedSettings structure if necessary
+          setSettings(parsedSettings)
+        } catch (error) {
+          console.error("Failed to parse theme settings from localStorage:", error);
+          // Fallback or remove corrupted data
+          localStorage.removeItem("theme-settings");
+        }
+      }
+    }
+  }, [isMounted])
+
+  useEffect(() => {
+    if (isMounted) {
+      // Save settings to localStorage and apply to document
+      localStorage.setItem("theme-settings", JSON.stringify(settings))
+      applyThemeSettings(settings)
+    }
+  }, [settings, isMounted])
 
   const applyThemeSettings = (newSettings: ThemeSettings) => {
     const root = document.documentElement
@@ -85,7 +102,7 @@ export default function ThemeCustomizationPanel() {
       {/* Settings Button - positioned above back-to-top */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-8 w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl flex items-center justify-center z-40 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:-translate-y-1"
+        className="fixed bottom-16 sm:bottom-24 right-4 sm:right-8 w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl flex items-center justify-center z-40 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:-translate-y-1"
         aria-label="Open theme settings"
       >
         <Settings className="w-6 h-6 animate-spin-slow" />
@@ -99,7 +116,7 @@ export default function ThemeCustomizationPanel() {
       >
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
         <div
-          className={`absolute right-0 top-0 h-full w-80 glass-card transform transition-transform duration-300 ${
+          className={`absolute right-0 top-0 h-full w-full sm:w-80 glass-card transform transition-transform duration-300 ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >

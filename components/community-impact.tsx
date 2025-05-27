@@ -205,6 +205,11 @@ export default function CommunityImpact() {
   const [isVisible, setIsVisible] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Filter events based on type and year
   useEffect(() => {
@@ -465,7 +470,7 @@ export default function CommunityImpact() {
                 <div
                   className="community-timeline-line absolute top-0 w-1 bg-gradient-to-b from-[#00d4ff] to-[#00ff88] opacity-50"
                   style={{
-                    left: window.innerWidth < 768 ? "16px" : "24px",
+                    left: isMounted && window.innerWidth < 768 ? "16px" : "24px",
                     height: "100%",
                     zIndex: 1,
                   }}
@@ -485,7 +490,7 @@ export default function CommunityImpact() {
                           backgroundColor: getEventTypeColor(event.type),
                           boxShadow: `0 0 10px ${getEventTypeColor(event.type)}`,
                           top: "24px",
-                          left: window.innerWidth < 640 ? "-18px" : "-42px", // Responsive positioning for mobile
+                          left: isMounted && window.innerWidth < 640 ? "-18px" : "-42px", // Responsive positioning for mobile
                           zIndex: 2,
                         }}
                       />

@@ -70,8 +70,10 @@ export default function Contact() {
       setMousePosition({ x, y })
     }
 
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
+    if (typeof window !== 'undefined') {
+      window.addEventListener("mousemove", handleMouseMove)
+      return () => window.removeEventListener("mousemove", handleMouseMove)
+    }
   }, [])
 
   // Update current time
@@ -107,12 +109,17 @@ export default function Contact() {
   const moveY = mousePosition.y * 10 - 5
 
   const copyToClipboard = async (text: string, id: string) => {
-    try {
-      await navigator.clipboard.writeText(text)
-      setCopiedItem(id)
-      setTimeout(() => setCopiedItem(null), 2000)
-    } catch (err) {
-      console.error("Failed to copy:", err)
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(text)
+        setCopiedItem(id)
+        setTimeout(() => setCopiedItem(null), 2000)
+      } catch (err) {
+        console.error("Failed to copy:", err)
+      }
+    } else {
+      console.warn("Clipboard API not available.")
+      // Optionally, provide a fallback or inform the user
     }
   }
 
@@ -131,10 +138,15 @@ export default function Contact() {
       value: "+254768144877",
       icon: <Phone className="w-5 h-5" />,
       action: () => {
-        if (window.innerWidth <= 768) {
-          window.location.href = "tel:+25476****877"
+        if (typeof window !== 'undefined') {
+          if (window.innerWidth <= 768) {
+            window.location.href = "tel:+25476****877"
+          } else {
+            copyToClipboard("+254768144877", "phone")
+          }
         } else {
-          copyToClipboard("+254768144877", "phone")
+          // Fallback or log if window is not defined (e.g., during SSR if this action could be triggered)
+          copyToClipboard("+254768144877", "phone") 
         }
       },
       copyable: true,

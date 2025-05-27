@@ -17,13 +17,30 @@ export default function InteractiveStatsPanel() {
     sessionTime: 0,
     scrollProgress: 0,
     sectionsViewed: new Set(),
-    localTime: "",
-    browserInfo: "",
-    deviceType: "",
+    localTime: "--:--:--", // Placeholder
+    browserInfo: "Unknown",  // Placeholder
+    deviceType: "Unknown",   // Placeholder
   })
   const [isExpanded, setIsExpanded] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  const [totalSections, setTotalSections] = useState(5) // Default to 5
 
   useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isMounted) return
+
+    // Calculate total sections
+    const mainContent = document.querySelector("main");
+    if (mainContent) {
+        const sectionsNodeList = mainContent.querySelectorAll("section[id]");
+        if (sectionsNodeList.length > 0) {
+            setTotalSections(sectionsNodeList.length);
+        }
+    }
+
     // Session timer
     const startTime = Date.now()
     const timer = setInterval(() => {
@@ -62,6 +79,7 @@ export default function InteractiveStatsPanel() {
       ...prev,
       browserInfo: getBrowserInfo(),
       deviceType: getDeviceType(),
+      localTime: new Date().toLocaleTimeString(), // Initial local time
     }))
 
     // Scroll progress tracker
@@ -76,22 +94,26 @@ export default function InteractiveStatsPanel() {
       }))
 
       // Track sections viewed
-      const sections = ["home", "about", "experience", "projects", "contact"]
-      sections.forEach((section) => {
-        const element = document.getElementById(section)
+      const sections = ["hero", "about", "experience", "projects", "contact"] // Ensure these IDs exist
+      sections.forEach((sectionId) => {
+        const element = document.getElementById(sectionId)
         if (element) {
           const rect = element.getBoundingClientRect()
           if (rect.top < window.innerHeight && rect.bottom > 0) {
-            setStats((prev) => ({
-              ...prev,
-              sectionsViewed: new Set([...prev.sectionsViewed, section]),
-            }))
+            setStats((prev) => {
+              if (!prev.sectionsViewed.has(sectionId)) {
+                const newSectionsViewed = new Set(prev.sectionsViewed)
+                newSectionsViewed.add(sectionId)
+                return { ...prev, sectionsViewed: newSectionsViewed }
+              }
+              return prev
+            })
           }
         }
       })
     }
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     handleScroll() // Initial call
 
     return () => {
@@ -99,7 +121,7 @@ export default function InteractiveStatsPanel() {
       clearInterval(timeUpdater)
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  }, [isMounted])
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60)
@@ -115,7 +137,11 @@ export default function InteractiveStatsPanel() {
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <div className="glass-card p-3 rounded-lg shadow-lg border border-[var(--accent-primary)] bg-[#0a0f1c]/80 backdrop-blur-md">
-        {!isExpanded ? (
+        {!isMounted ? (
+          <div className="flex items-center justify-center">
+            <TrendingUp className="w-6 h-6 text-[var(--accent-primary)] opacity-50" />
+          </div>
+        ) : !isExpanded ? (
           <div className="flex items-center justify-center">
             <TrendingUp className="w-6 h-6 text-[var(--accent-primary)]" />
           </div>
@@ -158,7 +184,7 @@ export default function InteractiveStatsPanel() {
                 <Eye className="w-3 h-3 mr-1 text-[var(--accent-primary)]" />
                 <span>Sections</span>
               </div>
-              <span>{stats.sectionsViewed.size}/5</span>
+              <span>{stats.sectionsViewed.size}/{totalSections}</span>
             </div>
 
             {/* Local Time */}

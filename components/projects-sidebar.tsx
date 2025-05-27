@@ -2,7 +2,11 @@
 
 import type React from "react"
 
-import { useState, useRef, useEffect } from "react"
+import {
+  useState,
+  useRef,
+  useEffect,
+} from "react"
 import {
   Search,
   Filter,
@@ -397,27 +401,7 @@ const projects: Project[] = [
     primaryTech: "React",
     primaryTechIcon: <Layout />,
   },
-  {
-    id: 17,
-    title: "GraphQL e-commerce API",
-    tagline: "Scalable Node.js server with GraphQL queries and CRUD operations",
-    description: "Scalable Node.js server with GraphQL queries, CRUD operations, and review system",
-    longDescription:
-      "A robust backend API built with GraphQL that handles complex e-commerce operations including product management, user authentication, and review systems.",
-    technologies: ["Node.js", "GraphQL", "MongoDB", "Express", "JWT"],
-    category: "API",
-    difficulty: "Advanced",
-    status: "Creation",
-    image: "/graphql-api-schema-diagram.png",
-    githubUrl: "https://github.com/example/graphql-ecommerce",
-    challenges: ["Complex query optimization", "Authentication middleware", "Data relationship management"],
-    solutions: ["Query depth limiting", "JWT token validation", "Mongoose population strategies"],
-    features: ["GraphQL playground", "Real-time subscriptions", "Role-based access", "Review aggregation"],
-    dateCompleted: "2023-10-20",
-    metrics: ["98% test coverage", "50ms average query time", "Supports 1000+ concurrent users"],
-    primaryTech: "GraphQL",
-    primaryTechIcon: <Server />,
-  },
+
   {
     id: 18,
     title: "AWS Serverless Expense Tracker",
@@ -429,9 +413,9 @@ const projects: Project[] = [
     category: "Cloud",
     difficulty: "Advanced",
     status: "Live",
-    image: "/aws-serverless-architecture.png",
-    githubUrl: "https://github.com/example/serverless-expense-tracker",
-    liveUrl: "https://expense-tracker-aws.com",
+    image: "/projects/Message-Driven E-commerce Architecture.png",
+    githubUrl: "https://github.com/elijahondiek/AWS-Serverless-API",
+    liveUrl: "https://github.com/elijahondiek/AWS-Serverless-API",
     challenges: ["Cold start optimization", "Cost management", "Data consistency"],
     solutions: ["Connection pooling", "Reserved concurrency", "DynamoDB transactions"],
     features: ["Automated categorization", "Spending analytics", "Receipt scanning", "Budget alerts"],
@@ -440,74 +424,9 @@ const projects: Project[] = [
     primaryTech: "AWS",
     primaryTechIcon: <Server />,
   },
-  {
-    id: 19,
-    title: "Social Media API",
-    tagline: "FastAPI backend with PostgreSQL, user management, and voting system",
-    description: "FastAPI backend with PostgreSQL, user management, posts, and voting system",
-    longDescription:
-      "A comprehensive social media backend API built with FastAPI, featuring user authentication, post management, and a sophisticated voting system for content ranking.",
-    technologies: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Redis", "Docker"],
-    category: "API",
-    difficulty: "Intermediate",
-    status: "Creation",
-    image: "/placeholder.svg?height=300&width=400&query=social media api endpoints",
-    githubUrl: "https://github.com/example/social-media-api",
-    challenges: ["Real-time notifications", "Content moderation", "Scalable voting system"],
-    solutions: ["WebSocket connections", "ML content filtering", "Redis caching for votes"],
-    features: ["User authentication", "Post CRUD operations", "Voting system", "Real-time notifications"],
-    dateCompleted: "2023-09-15",
-    metrics: ["500+ API endpoints", "10ms average response time", "Comprehensive Swagger documentation"],
-    primaryTech: "FastAPI",
-    primaryTechIcon: <Server />,
-  },
-  {
-    id: 20,
-    title: "Student Assistant Chat Bot",
-    tagline: "WhatsApp integration with Twilio, Google Dialogflow, and Node.js",
-    description: "WhatsApp integration with Twilio, Google Dialogflow, and Node.js backend",
-    longDescription:
-      "An intelligent chatbot designed to assist students with academic queries, schedule management, and resource discovery through WhatsApp integration.",
-    technologies: ["Node.js", "Twilio", "Dialogflow", "MongoDB", "Express"],
-    category: "AI/Bot",
-    difficulty: "Intermediate",
-    status: "Live",
-    image: "/projects/AI-Powered WhatsApp Assistant (Twilio & Dialogflow).png",
-    githubUrl: "https://github.com/elijahondiek/AI-Powered-WhatsApp-Student-Assistant-Twilio-Dialogflow-",
-    challenges: ["Natural language processing", "Context management", "Multi-platform integration"],
-    solutions: ["Dialogflow intent mapping", "Session state management", "Webhook optimization"],
-    features: [
-      "Natural language understanding",
-      "Schedule management",
-      "Resource recommendations",
-      "Multi-language support",
-    ],
-    dateCompleted: "2023-08-10",
-    metrics: ["2,500+ active users", "85% query resolution rate", "Support for 3 languages"],
-    primaryTech: "Dialogflow",
-    primaryTechIcon: <Bot />,
-  },
-  {
-    id: 21,
-    title: "Bookmarks Manager API",
-    tagline: "Authentication system with CRUD operations and usage statistics",
-    description: "Authentication system with CRUD operations, link tracking, and usage statistics",
-    longDescription:
-      "A sophisticated bookmark management system that tracks user behavior, provides usage analytics, and offers intelligent categorization of saved links.",
-    technologies: ["Node.js", "Express", "MongoDB", "JWT", "Chart.js"],
-    category: "Productivity",
-    difficulty: "Intermediate",
-    status: "Creation",
-    image: "/projects/Bookmarks-Manager-Microservice.png",
-    githubUrl: "https://github.com/elijahondiek/Bookmarks-Manager-Microservice",
-    challenges: ["Link metadata extraction", "Usage analytics", "Search optimization"],
-    solutions: ["Web scraping for metadata", "Event tracking system", "Elasticsearch integration"],
-    features: ["Smart categorization", "Usage analytics", "Search functionality", "Export/import"],
-    dateCompleted: "2023-07-25",
-    metrics: ["1,200+ bookmarks managed", "Sub-second search performance", "98% metadata extraction accuracy"],
-    primaryTech: "Node.js",
-    primaryTechIcon: <Server />,
-  },
+
+ 
+
   {
     id: 22,
     title: "Threaded Replies App",
@@ -519,8 +438,8 @@ const projects: Project[] = [
     category: "Web App",
     difficulty: "Intermediate",
     status: "Creation",
-    image: "/placeholder.svg?height=300&width=400&query=threaded comments interface",
-    githubUrl: "https://github.com/example/threaded-replies",
+    image: "/projects/Nested Comments Engine.png",
+    githubUrl: "hhttps://github.com/elijahondiek/Dynamic-Nested-Reply-Platform",
     challenges: ["Nested comment structure", "Performance optimization", "Real-time updates"],
     solutions: ["Recursive query optimization", "Database indexing", "WebSocket implementation"],
     features: ["Nested comments", "User moderation", "Real-time updates", "Vote system"],
@@ -530,94 +449,7 @@ const projects: Project[] = [
     primaryTechIcon: <Server />,
   },
 
-  {
-    id: 24,
-    title: "Full Circle Health & Wellness",
-    tagline: "Next.js 14 blog with TypeScript and Sanity CMS",
-    description: "Next.js 14 blog with TypeScript, Sanity CMS, and holistic health content",
-    longDescription:
-      "A modern health and wellness blog built with Next.js 14, featuring a headless CMS for content management and optimized for SEO and performance.",
-    technologies: ["Next.js 14", "TypeScript", "Sanity CMS", "Tailwind CSS", "Vercel"],
-    category: "Blog",
-    difficulty: "Intermediate",
-    status: "Live",
-    image: "/placeholder.svg?height=300&width=400&query=health wellness blog homepage",
-    githubUrl: "https://github.com/example/health-wellness-blog",
-    liveUrl: "https://fullcirclehealth.com",
-    challenges: ["SEO optimization", "Content management", "Performance optimization"],
-    solutions: ["Static site generation", "Image optimization", "Structured data markup"],
-    features: ["Content management", "SEO optimization", "Newsletter signup", "Social sharing"],
-    dateCompleted: "2024-01-20",
-    metrics: ["15,000+ monthly visitors", "2.5s average page load", "85+ published articles"],
-    primaryTech: "Next.js",
-    primaryTechIcon: <Layout />,
-  },
-  {
-    id: 25,
-    title: "Triotech Software Solutions",
-    tagline: "Corporate website showcasing custom software development services",
-    description: "Corporate website showcasing custom software development services",
-    longDescription:
-      "A professional corporate website for a software development company, featuring service portfolios, team profiles, and client testimonials.",
-    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Netlify"],
-    category: "Corporate",
-    difficulty: "Beginner",
-    status: "Live",
-    image: "/placeholder.svg?height=300&width=400&query=corporate software company website",
-    githubUrl: "https://github.com/example/triotech-website",
-    liveUrl: "https://triotechsolutions.com",
-    challenges: ["Professional design", "Performance optimization", "Contact form integration"],
-    solutions: ["Modern UI/UX design", "Image optimization", "Serverless form handling"],
-    features: ["Service showcase", "Team profiles", "Contact forms", "Testimonials"],
-    dateCompleted: "2023-12-05",
-    metrics: ["30% increase in lead generation", "95/100 PageSpeed score", "2.2s average load time"],
-    primaryTech: "React",
-    primaryTechIcon: <Code />,
-  },
-  {
-    id: 26,
-    title: "Mema Africa",
-    tagline: "Marketing consulting website for boutique firm",
-    description: "Marketing consulting website for boutique firm with value-driven solutions",
-    longDescription:
-      "A sleek marketing website for a boutique consulting firm specializing in African markets, featuring case studies and service offerings.",
-    technologies: ["React", "CSS3", "Bootstrap5"],
-    category: "Marketing",
-    difficulty: "Beginner",
-    status: "Live",
-    image: "/projects/memaafrica.png",
-    githubUrl: "https://www.memaafrica.org/",
-    liveUrl: "https://www.memaafrica.org/",
-    challenges: ["Brand representation", "Content organization", "Mobile optimization"],
-    solutions: ["Custom design system", "Content strategy", "Progressive web app"],
-    features: ["Case studies", "Service pages", "Contact forms", "Blog integration"],
-    dateCompleted: "2023-11-10",
-    metrics: ["40% bounce rate reduction", "3.5 min average session duration", "15+ lead conversions monthly"],
-    primaryTech: "Gatsby",
-    primaryTechIcon: <Layout />,
-  },
-  {
-    id: 27,
-    title: "Itesyl Technologies",
-    tagline: "Fintech website specializing in real estate banking services",
-    description: "Fintech website specializing in real estate banking services",
-    longDescription:
-      "A fintech platform website showcasing innovative banking solutions for the real estate industry, with secure client portals and service information.",
-    technologies: ["React", "CSS3", "Bootstrap5"],
-    category: "Fintech",
-    difficulty: "Advanced",
-    status: "Live",
-    image: "/projects/itesyl.png",
-    githubUrl: "https://itesyl.netlify.app/",
-    liveUrl: "https://itesyl.netlify.app/",
-    challenges: ["Security compliance", "Financial data handling", "User authentication"],
-    solutions: ["Multi-factor authentication", "Encrypted data transmission", "Compliance frameworks"],
-    features: ["Client portals", "Service calculator", "Secure messaging", "Document upload"],
-    dateCompleted: "2024-02-14",
-    metrics: ["99.99% uptime", "GDPR & PCI DSS compliant", "$2M+ transactions processed"],
-    primaryTech: "Vue.js",
-    primaryTechIcon: <Code />,
-  },
+
 ]
 
 const categories = [
@@ -634,7 +466,7 @@ const categories = [
 ]
 
 export default function ProjectsSidebar() {
-  const [selectedProject, setSelectedProject] = useState<Project>(projects[0])
+  const [selectedProject, setSelectedProject] = useState<Project | null>(projects[0])
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState("All")
   const [filteredProjects, setFilteredProjects] = useState(projects)
@@ -644,34 +476,15 @@ export default function ProjectsSidebar() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Filter projects based on search and category
   useEffect(() => {
-    let filtered = projects
+    setIsMounted(true);
+  }, []);
 
-    if (activeCategory !== "All") {
-      filtered = filtered.filter((project) => project.category === activeCategory)
-    }
-
-    if (searchQuery) {
-      filtered = filtered.filter(
-        (project) =>
-          project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          project.technologies.some((tech) => tech.toLowerCase().includes(searchQuery.toLowerCase())),
-      )
-    }
-
-    setFilteredProjects(filtered)
-
-    // If the currently selected project is not in the filtered list, select the first one
-    if (filtered.length > 0 && !filtered.find((p) => p.id === selectedProject.id)) {
-      setSelectedProject(filtered[0])
-    }
-  }, [activeCategory, searchQuery, selectedProject.id])
-
-  // Intersection Observer for scroll animations
   useEffect(() => {
+    if (!isMounted) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -686,13 +499,11 @@ export default function ProjectsSidebar() {
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [isMounted])
 
-  // Mouse movement for parallax effects
   useEffect(() => {
-    // Only run on client-side
-    if (typeof window === 'undefined') return
-    
+    if (!isMounted) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return
 
@@ -705,17 +516,15 @@ export default function ProjectsSidebar() {
 
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+  }, [isMounted])
 
-  // Keyboard navigation
   useEffect(() => {
-    // Only run on client-side
-    if (typeof window === 'undefined') return
-    
+    if (!isMounted) return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowUp" || e.key === "ArrowDown") {
         e.preventDefault()
-        const currentIndex = filteredProjects.findIndex((p) => p.id === selectedProject.id)
+        const currentIndex = filteredProjects.findIndex((p) => p.id === selectedProject?.id)
 
         if (e.key === "ArrowUp" && currentIndex > 0) {
           handleProjectSelect(filteredProjects[currentIndex - 1])
@@ -727,14 +536,15 @@ export default function ProjectsSidebar() {
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [filteredProjects, selectedProject.id])
+  }, [filteredProjects, selectedProject, isMounted])
 
-  // Scroll to top of content when changing projects
   useEffect(() => {
+    if (!isMounted) return;
+
     if (contentRef.current) {
       contentRef.current.scrollTop = 0
     }
-  }, [selectedProject])
+  }, [selectedProject, isMounted])
 
   const moveX = mousePosition.x * 10 - 5
   const moveY = mousePosition.y * 10 - 5
@@ -744,12 +554,10 @@ export default function ProjectsSidebar() {
     setSelectedProject(project)
     setIsMobileSidebarOpen(false)
 
-    // Update URL with project ID for deep linking - only on client side
     if (typeof window !== 'undefined') {
       window.history.replaceState(null, "", `#projects-${project.id}`)
     }
 
-    // Simulate loading for smoother transitions
     setTimeout(() => {
       setIsLoading(false)
     }, 300)
@@ -807,6 +615,10 @@ export default function ProjectsSidebar() {
   }
 
   const shareProject = (project: Project) => {
+    if (typeof window === 'undefined') {
+      alert("Sharing features are not available during server rendering.");
+      return;
+    }
     if (navigator.share) {
       navigator.share({
         title: project.title,
@@ -814,18 +626,16 @@ export default function ProjectsSidebar() {
         url: project.liveUrl || window.location.href,
       })
     } else {
-      // Fallback to clipboard
       navigator.clipboard.writeText(project.liveUrl || window.location.href)
     }
   }
 
-  // Find related projects based on technologies
   const getRelatedProjects = () => {
     const relatedProjects = projects
       .filter(
         (project) =>
-          project.id !== selectedProject.id &&
-          project.technologies.some((tech) => selectedProject.technologies.includes(tech)),
+          project.id !== selectedProject?.id &&
+          project.technologies.some((tech) => selectedProject?.technologies.includes(tech)),
       )
       .slice(0, 3)
     return relatedProjects
@@ -833,7 +643,6 @@ export default function ProjectsSidebar() {
 
   return (
     <section id="projects" className="min-h-screen py-24  relative" ref={containerRef}>
-      {/* Subtle spotlight effect */}
       <div
         className="absolute pointer-events-none w-[40vw] h-[40vw] rounded-full blur-3xl opacity-20"
         style={{
@@ -845,7 +654,6 @@ export default function ProjectsSidebar() {
       />
 
       <div className="container w-full">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2
             className="text-4xl md:text-5xl font-bold mb-4"
@@ -862,7 +670,6 @@ export default function ProjectsSidebar() {
           </p>
         </div>
 
-        {/* Mobile Sidebar Toggle */}
         <div className="md:hidden mb-6">
           <button
             onClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)}
@@ -870,26 +677,23 @@ export default function ProjectsSidebar() {
           >
             <div className="flex items-center">
               <Menu className="w-5 h-5 mr-2 text-[#00d4ff]" />
-              <span>{selectedProject.title}</span>
+              <span>{selectedProject?.title}</span>
             </div>
             <ChevronDown className={`w-5 h-5 transition-transform ${isMobileSidebarOpen ? "rotate-180" : ""}`} />
           </button>
         </div>
 
-        {/* Projects Layout */}
         <div
           className={`flex flex-col md:flex-row gap-6 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          {/* Left Sidebar - Project Navigation */}
           <div
             className={cn(
               "md:w-[30%] glass-card p-4 md:max-h-[800px] overflow-hidden flex flex-col",
               isMobileSidebarOpen ? "block" : "hidden md:flex",
             )}
           >
-            {/* Search Bar */}
             <div className="relative mb-4">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#b4bcd0] w-4 h-4" />
               <input
@@ -901,7 +705,6 @@ export default function ProjectsSidebar() {
               />
             </div>
 
-            {/* Category Filters */}
             <div className="mb-4">
               <div className="flex items-center mb-2">
                 <Filter className="w-4 h-4 mr-2" style={{ color: 'var(--accent-primary)' }} />
@@ -945,7 +748,6 @@ export default function ProjectsSidebar() {
               </div>
             </div>
 
-            {/* Project List */}
             <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
               <h4 className="text-sm font-medium mb-2 text-[#b4bcd0]">
                 {filteredProjects.length} Project{filteredProjects.length !== 1 ? "s" : ""}
@@ -956,20 +758,20 @@ export default function ProjectsSidebar() {
                     key={project.id}
                     onClick={() => handleProjectSelect(project)}
                     className={`w-full text-left p-3 rounded-lg transition-all duration-300 hover:scale-[1.02] ${
-                      selectedProject.id === project.id
+                      selectedProject?.id === project.id
                         ? "bg-gradient-to-r from-[#00d4ff]/20 to-[#00ff88]/20 border-l-4 border-[#00d4ff]"
                         : "glass-card hover:bg-white/10"
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                      <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center mr-3 transition-all duration-300 hover:scale-105 hover:rounded-full"
-                  style={{
-                    backgroundColor: `${getCategoryColor(project.category)}15`,
-                    color: getCategoryColor(project.category),
-                  }}
-                >
+                        <div
+                          className="w-10 h-10 rounded-lg flex items-center justify-center mr-3 transition-all duration-300 hover:scale-105 hover:rounded-full"
+                          style={{
+                            backgroundColor: `${getCategoryColor(project.category)}15`,
+                            color: getCategoryColor(project.category),
+                          }}
+                        >
                           {project.primaryTechIcon}
                         </div>
                         <div>
@@ -1003,7 +805,6 @@ export default function ProjectsSidebar() {
               </div>
             </div>
 
-            {/* Keyboard Navigation Hint */}
             <div className="mt-4 pt-3 border-t border-white/10 text-xs text-[#b4bcd0] flex items-center justify-center">
               <span className="glass-card px-2 py-1 rounded mr-2">↑</span>
               <span className="glass-card px-2 py-1 rounded mr-2">↓</span>
@@ -1011,7 +812,6 @@ export default function ProjectsSidebar() {
             </div>
           </div>
 
-          {/* Right Content Area - Project Details */}
           <div className="md:w-[70%] glass-card p-6 md:max-h-[800px] overflow-hidden relative">
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/50 backdrop-blur-sm">
@@ -1020,38 +820,36 @@ export default function ProjectsSidebar() {
             )}
 
             <div ref={contentRef} className="h-full overflow-y-auto pr-2 custom-scrollbar">
-              {/* Project Header */}
               <div className="mb-8 pb-6 border-b border-white/10">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
                   <div>
-                    <h2 className="text-3xl font-bold mb-2">{selectedProject.title}</h2>
-                    <p className="text-[#b4bcd0] text-lg">{selectedProject.tagline}</p>
+                    <h2 className="text-3xl font-bold mb-2">{selectedProject?.title}</h2>
+                    <p className="text-[#b4bcd0] text-lg">{selectedProject?.tagline}</p>
                   </div>
                   <div className="flex items-center space-x-3 mt-4 md:mt-0">
                     <span
                       className="px-3 py-1 rounded-full text-sm font-medium"
                       style={{
-                        backgroundColor: getStatusColor(selectedProject.status),
+                        backgroundColor: getStatusColor(selectedProject?.status),
                         color: "#0a0f1c",
                       }}
                     >
-                      {selectedProject.status}
+                      {selectedProject?.status}
                     </span>
                     <span
                       className="px-3 py-1 rounded-full text-sm font-medium"
                       style={{
-                        backgroundColor: getDifficultyColor(selectedProject.difficulty),
+                        backgroundColor: getDifficultyColor(selectedProject?.difficulty),
                         color: "#0a0f1c",
                       }}
                     >
-                      {selectedProject.difficulty}
+                      {selectedProject?.difficulty}
                     </span>
                   </div>
                 </div>
 
-                {/* Tech Stack Badges */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {selectedProject.technologies.map((tech, index) => (
+                  {selectedProject?.technologies.map((tech, index) => (
                     <span
                       key={index}
                       className="px-3 py-1 text-sm rounded-lg"
@@ -1066,11 +864,10 @@ export default function ProjectsSidebar() {
                   ))}
                 </div>
 
-                {/* Action Buttons */}
                 <div className="flex flex-wrap gap-3">
-                  {selectedProject.githubUrl && (
+                  {selectedProject?.githubUrl && (
                     <a
-                      href={selectedProject.githubUrl}
+                      href={selectedProject?.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center space-x-2 px-4 py-2 glass-card rounded-lg hover:text-[#00d4ff] transition-all duration-300"
@@ -1079,9 +876,9 @@ export default function ProjectsSidebar() {
                       <span>View Code</span>
                     </a>
                   )}
-                  {selectedProject.liveUrl && (
+                  {selectedProject?.liveUrl && (
                     <a
-                      href={selectedProject.liveUrl}
+                      href={selectedProject?.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300"
@@ -1103,34 +900,30 @@ export default function ProjectsSidebar() {
                 </div>
               </div>
 
-              {/* Project Content Sections */}
               <div className="space-y-8">
-                {/* Overview */}
                 <div>
                   <h3 className="text-xl font-semibold mb-4 flex items-center">
                     <Globe className="w-5 h-5 mr-2 text-[#00d4ff]" />
                     Overview
                   </h3>
-                  <p className="text-[#b4bcd0] leading-relaxed">{selectedProject.longDescription}</p>
+                  <p className="text-[#b4bcd0] leading-relaxed">{selectedProject?.longDescription}</p>
                 </div>
 
-                {/* Project Image */}
                 <div className="rounded-lg overflow-hidden">
                   <img
-                    src={selectedProject.image || "/placeholder.svg"}
-                    alt={selectedProject.title}
+                    src={selectedProject?.image || "/placeholder.svg"}
+                    alt={selectedProject?.title}
                     className="w-full h-auto object-cover"
                   />
                 </div>
 
-                {/* Key Features */}
                 <div>
                   <h3 className="text-xl font-semibold mb-4 flex items-center">
                     <Zap className="w-5 h-5 mr-2 text-[#00ff88]" />
                     Key Features
                   </h3>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {selectedProject.features.map((feature, index) => (
+                    {selectedProject?.features.map((feature, index) => (
                       <li key={index} className="flex items-start space-x-2 glass-card p-3 rounded-lg">
                         <div className="w-5 h-5 rounded-full bg-[#00ff88]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <div className="w-2 h-2 rounded-full bg-[#00ff88]"></div>
@@ -1141,13 +934,11 @@ export default function ProjectsSidebar() {
                   </ul>
                 </div>
 
-                {/* Challenges & Solutions */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Challenges */}
                   <div>
                     <h3 className="text-xl font-semibold mb-4">Challenges</h3>
                     <ul className="space-y-3">
-                      {selectedProject.challenges.map((challenge, index) => (
+                      {selectedProject?.challenges.map((challenge, index) => (
                         <li key={index} className="flex items-start space-x-2">
                           <div className="w-5 h-5 rounded-full bg-[#ff6b6b]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <div className="w-2 h-2 rounded-full bg-[#ff6b6b]"></div>
@@ -1158,11 +949,10 @@ export default function ProjectsSidebar() {
                     </ul>
                   </div>
 
-                  {/* Solutions */}
                   <div>
                     <h3 className="text-xl font-semibold mb-4">Solutions</h3>
                     <ul className="space-y-3">
-                      {selectedProject.solutions.map((solution, index) => (
+                      {selectedProject?.solutions.map((solution, index) => (
                         <li key={index} className="flex items-start space-x-2">
                           <div className="w-5 h-5 rounded-full bg-[#00d4ff]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <div className="w-2 h-2 rounded-full bg-[#00d4ff]"></div>
@@ -1174,15 +964,11 @@ export default function ProjectsSidebar() {
                   </div>
                 </div>
 
-                {/* Metrics section removed as requested */}
-
-                {/* Project Timeline - Less Dominant */}
                 <div className="text-sm text-[#b4bcd0] flex items-center">
                   <Calendar className="w-4 h-4 mr-1 opacity-60" />
-                  <span className="opacity-60">Completed: {new Date(selectedProject.dateCompleted).toLocaleDateString()}</span>
+                  <span className="opacity-60">Completed: {new Date(selectedProject?.dateCompleted).toLocaleDateString()}</span>
                 </div>
 
-                {/* Related Projects */}
                 <div>
                   <h3 className="text-xl font-semibold mb-4">Related Projects</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

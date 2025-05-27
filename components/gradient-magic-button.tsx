@@ -12,6 +12,8 @@ interface GradientMagicButtonProps {
   style?: React.CSSProperties
   accentColor?: "primary" | "secondary" | "purple" | "orange"
   as?: "a" | "button"
+  target?: string
+  rel?: string
 }
 
 export default function GradientMagicButton({
@@ -22,6 +24,8 @@ export default function GradientMagicButton({
   style = {},
   accentColor = "primary",
   as = "a",
+  target,
+  rel,
 }: GradientMagicButtonProps) {
     const gradientMap = {
         primary:
@@ -45,6 +49,8 @@ export default function GradientMagicButton({
     style: combinedStyle,
     ...(href && { href }),
     ...(onClick && { onClick }),
+    ...(as === "a" && target && { target }),
+    ...(as === "a" && rel && { rel }),
   }
 
   return (
