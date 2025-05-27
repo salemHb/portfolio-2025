@@ -3,10 +3,16 @@
 import { useEffect, useState } from "react"
 
 export default function CursorSpotlight() {
+  // Check if we're in a browser environment
+  const isBrowser = typeof window !== "undefined"
+  
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    // Don't run this effect on the server
+    if (!isBrowser) return
+
     const updatePosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY })
       setIsVisible(true)
@@ -23,9 +29,10 @@ export default function CursorSpotlight() {
       window.removeEventListener("mousemove", updatePosition)
       window.removeEventListener("mouseleave", handleMouseLeave)
     }
-  }, [])
-
-  if (typeof window === "undefined") return null
+  }, [isBrowser])
+  
+  // Don't render anything on the server
+  if (!isBrowser) return null
 
   return (
     <div

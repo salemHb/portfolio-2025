@@ -155,21 +155,21 @@ export default function Contact() {
       href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://www.linkedin.com/in/ondiek-elijah/",
       icon: <Linkedin className="w-6 h-6" />,
       description: "Professional network",
-      followers: "500+ connections",
+      followers: "2106+ connections",
     },
     {
       name: "GitHub",
-      href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/elijahondiekashbased",
+      href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/elijahondiek",
       icon: <Github className="w-6 h-6" />,
       description: "Code repositories",
-      followers: "50+ repositories",
+      followers: "116+ repositories",
     },
     {
       name: "Twitter",
       href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://x.com/0chibo_",
       icon: <Twitter className="w-6 h-6" />,
       description: "Tech insights",
-      followers: "200+ followers",
+      followers: "2630+ followers",
     },
   ]
 

@@ -10,8 +10,11 @@ const inter = Inter({
   variable: "--font-inter",
 })
 
-// Base URL for your site - update this to your actual domain
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://elijah-ondiek.com/'
+// Base URL for your site - use relative URLs for local development
+const isProduction = process.env.NODE_ENV === 'production';
+const baseUrl = isProduction 
+  ? 'https://elijah-ondiek.com' 
+  : ''; // Use relative URLs in development
 
 export const metadata: Metadata = {
   title: {
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(baseUrl),
+  metadataBase: baseUrl ? new URL(baseUrl) : new URL('http://localhost:3000'),
   alternates: {
     canonical: baseUrl,
   },
@@ -68,14 +71,14 @@ export const metadata: Metadata = {
     siteName: "Elijah Ondiek Portfolio",
     images: [
       {
-        url: `${baseUrl}/og-image.jpg`, // Add your OpenGraph image
+        url: '/og-image.jpg', // Use relative path for images
         width: 1200,
         height: 630,
         alt: "Elijah Ondiek - Software Engineer",
         type: 'image/jpeg',
       },
       {
-        url: `${baseUrl}/og-image-square.jpg`, // Square version for some platforms
+        url: '/og-image-square.jpg', // Square version for some platforms
         width: 1200,
         height: 1200,
         alt: "Elijah Ondiek - Software Engineer",
@@ -93,7 +96,9 @@ export const metadata: Metadata = {
     site: '@0chibo_',
     images: [
       {
-        url: `${baseUrl}/og-image.jpg`,
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
         alt: "Elijah Ondiek - Software Engineer",
       }
     ],
