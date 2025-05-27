@@ -18,15 +18,15 @@ const baseUrl = isProduction
 
   export const metadata: Metadata = {
     title: {
-      default: "Elijah Ondiek | Software Engineer",
+      default: "Elijah Ondiek | Software Engineer & Web Engineer",
       template: "%s | Elijah Ondiek"
     },
-    description: "Discover the work of Elijah Ondiek, a passionate and results-driven software engineer with expertise in modern web technologies including React, Next.js, TypeScript, and Python. Specializing in high-performance, user-centric full-stack applications and scalable digital solutions.",
-  
+    description: "Explore the work of Elijah Ondiek, a passionate software engineer and web engineer specializing in scalable, high-performance full-stack applications built with React, Next.js, TypeScript, and Python. Delivering user-centric digital solutions with clean code and modern architecture.",
+    
     keywords: [
       "Elijah Ondiek",
       "Software Engineer",
-      "Web Developer",
+      "Web Engineer",
       "Full Stack Developer",
       "Frontend Developer",
       "Backend Developer",
@@ -39,21 +39,20 @@ const baseUrl = isProduction
       "Tailwind CSS",
       "Web Performance Optimization",
       "Open Source Contributor",
-      "Software Development",
-      "Modern Web Development",
-      "Clean Code Architecture",
-      "Software Engineering",
+      "Modern Software Development",
       "Web Applications",
+      "Clean Code Architecture",
       "Digital Solutions",
       "Kenya Software Engineer",
-      "East Africa Developer"
+      "East Africa Developer",
+      "Scalable Web Apps"
     ],
     
     authors: [{ name: "Elijah Ondiek", url: baseUrl }],
     creator: "Elijah Ondiek",
     publisher: "Elijah Ondiek",
     generator: 'Next.js',
-    applicationName: "Elijah Ondiek - Software Engineer",
+    applicationName: "Elijah Ondiek - Software & Web Engineer",
     referrer: 'origin-when-cross-origin',
     formatDetection: {
       email: false,
@@ -70,22 +69,22 @@ const baseUrl = isProduction
       type: 'website',
       locale: 'en_US',
       url: baseUrl,
-      title: "Elijah Ondiek | Software Engineer & Web Developer",
-      description: "Explore the professional work of Elijah Ondiek, a dedicated software engineer specializing in modern web development, React, Next.js, and innovative full-stack solutions.",
-      siteName: "Elijah Ondiek - Software Engineer",
+      title: "Elijah Ondiek | Software Engineer & Web Engineer",
+      description: "Discover Elijah Ondiek, a dedicated software and web engineer crafting innovative full-stack web solutions with React, Next.js, and Python.",
+      siteName: "Elijah Ondiek - Software & Web Engineer",
       images: [
         {
           url: '/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: "Elijah Ondiek - Professional Software Engineer and Web Developer",
+          alt: "Elijah Ondiek - Professional Software and Web Engineer",
           type: 'image/jpeg',
         },
         {
           url: '/og-image-square.jpg',
           width: 1200,
           height: 1200,
-          alt: "Elijah Ondiek - Software Engineer",
+          alt: "Elijah Ondiek - Software & Web Engineer",
           type: 'image/jpeg',
         }
       ],
@@ -94,8 +93,8 @@ const baseUrl = isProduction
     // Twitter metadata
     twitter: {
       card: 'summary_large_image',
-      title: "Elijah Ondiek | Software Engineer & Web Developer",
-      description: "Professional software engineer specializing in modern web development, React, Next.js, and scalable digital solutions.",
+      title: "Elijah Ondiek | Software Engineer & Web Engineer",
+      description: "Professional software and web engineer specializing in modern web technologies, scalable full-stack solutions, and clean architecture.",
       creator: '@0chibo_',
       site: '@0chibo_',
       images: [
@@ -103,36 +102,12 @@ const baseUrl = isProduction
           url: '/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: "Elijah Ondiek - Software Engineer",
+          alt: "Elijah Ondiek - Software & Web Engineer",
         }
       ],
     },
+  };
   
-    // Additional metadata
-    robots: {
-      index: true,
-      follow: true,
-      nocache: false,
-      googleBot: {
-        index: true,
-        follow: true,
-        noimageindex: false,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-  
-    // Verification (add these if you have them)
-    verification: {
-      // google: 'your-google-verification-code',
-      // yandex: 'your-yandex-verification-code',
-      // yahoo: 'your-yahoo-verification-code',
-    },
-  
-    // Category for the site
-    category: 'technology',
-  }
 
 export default function RootLayout({
   children,
