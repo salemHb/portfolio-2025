@@ -38,7 +38,7 @@ export default function CursorSpotlight() {
     <div
       className="fixed pointer-events-none z-50 w-64 h-64 rounded-full mix-blend-screen blur-xl"
       style={{
-        backgroundImage: "linear-gradient(to right, rgba(0,212,255,0.3), rgba(0,255,136,0.3))",
+        backgroundImage: "linear-gradient(to right, rgba(0,212,255,0.15), rgba(0,255,136,0.15))",
         left: `${position.x}px`,
         top: `${position.y}px`,
         transform: "translate(-50%, -50%)",
