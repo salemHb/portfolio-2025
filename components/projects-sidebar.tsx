@@ -545,6 +545,37 @@ export default function ProjectsSidebar() {
       contentRef.current.scrollTop = 0
     }
   }, [selectedProject, isMounted])
+  
+  // Filter projects based on active category and search query
+  useEffect(() => {
+    if (!isMounted) return;
+    
+    let filtered = [...projects];
+    
+    // Filter by category
+    if (activeCategory !== "All") {
+      filtered = filtered.filter(project => project.category === activeCategory);
+    }
+    
+    // Filter by search query
+    if (searchQuery.trim() !== "") {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        project =>
+          project.title.toLowerCase().includes(query) ||
+          project.description.toLowerCase().includes(query) ||
+          project.technologies.some(tech => tech.toLowerCase().includes(query))
+      );
+    }
+    
+    setFilteredProjects(filtered);
+    
+    // If the currently selected project is not in the filtered list,
+    // select the first project in the filtered list
+    if (filtered.length > 0 && !filtered.some(p => p.id === selectedProject?.id)) {
+      setSelectedProject(filtered[0]);
+    }
+  }, [activeCategory, searchQuery, selectedProject?.id, isMounted])
 
   const moveX = mousePosition.x * 10 - 5
   const moveY = mousePosition.y * 10 - 5
