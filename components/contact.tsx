@@ -141,18 +141,17 @@ export default function Contact() {
     {
       id: "phone",
       label: "Phone",
-      value: "+254768144877",
+      value: "+254 7** *** **7",
       icon: <Phone className="w-5 h-5" />,
       action: () => {
         if (typeof window !== "undefined") {
           if (window.innerWidth <= 768) {
-            window.location.href = "tel:+25476****877";
+            window.location.href = "tel:+254768144877";
           } else {
-            copyToClipboard("+25476****877", "phone");
+            copyToClipboard("+254 7** *** **7", "phone");
           }
         } else {
-          // Fallback or log if window is not defined (e.g., during SSR if this action could be triggered)
-          copyToClipboard("+25476****877", "phone");
+          copyToClipboard("+254 7** *** **7", "phone");
         }
       },
       copyable: true,
