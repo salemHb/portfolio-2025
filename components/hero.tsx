@@ -357,7 +357,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Right column - Visual elements */}
-        <div className="w-full lg:w-5/12 relative">
+        <div className="hidden lg:block w-full lg:w-5/12 relative">
           {/* 3D layered cards effect */}
           <div className="relative h-[400px] md:h-[500px] w-full perspective-1000">
             {/* Main profile card */}

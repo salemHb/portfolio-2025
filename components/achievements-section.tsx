@@ -43,8 +43,8 @@ const achievements = [
 
 export default function AchievementsSection() {
   return (
-    <section className="block md:hidden w-full px-4 pt-6 pb-4">
-      <div className="flex flex-col items-center gap-3">
+    <section className="block md:hidden w-full px-4 pt-20 pb-0">
+      <div className="flex flex-col items-center gap-y-4 gap-x-3">
         {/* Top card - Top Performer */}
         <motion.div
           key="mobile-top-performer"
@@ -77,7 +77,7 @@ export default function AchievementsSection() {
           </motion.div>
         </motion.div>
         {/* First row of two cards */}
-        <div className="flex justify-center gap-3 w-full">
+        <div className="flex justify-center gap-x-4 w-full">
           {[0, 1].map((achievementIndex) => {
             const achievement = achievements[achievementIndex]
             return (
@@ -107,7 +107,7 @@ export default function AchievementsSection() {
           })}
         </div>
         {/* Second row with just one card */}
-        <div className="flex justify-center w-full">
+        <div className="flex justify-center w-full mt-4">
           <motion.div
             key="mobile-2"
             className="flex-shrink-0"
