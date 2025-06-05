@@ -178,7 +178,7 @@ export default function Contact() {
 		},
 		{
 			name: "GitHub",
-			href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/salemHb",
+			href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/",
 			icon: <Github className="w-6 h-6" />,
 			description: "Code repositories",
 			followers: "50+ repositories",
