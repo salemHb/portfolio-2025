@@ -1,4 +1,4 @@
-# Elijah Ondiek - Portfolio 2025
+# Hussein Salim - Portfolio 2025
 
 A modern, interactive portfolio website showcasing my skills, projects, and professional experience.
 
@@ -41,32 +41,4 @@ The portfolio includes a theme customization panel that allows visitors to:
 - **Community Impact**: Speaking engagements and community contributions
 - **Contact**: Multiple ways to get in touch
 
-## 🔧 Development
 
-```bash
-# Clone the repository
-git clone https://github.com/elijahondiek/portfolio-2025.git
-
-# Navigate to the project
-cd portfolio-2025
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- Design inspiration from modern web trends
-- Icons from Lucide Icons
-- Font from Google Fonts
-
----
-
-© 2025 Elijah Ondiek. All rights reserved.
