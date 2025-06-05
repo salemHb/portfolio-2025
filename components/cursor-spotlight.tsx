@@ -1,50 +1,51 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export default function CursorSpotlight() {
-  // Check if we're in a browser environment
-  const isBrowser = typeof window !== "undefined"
-  
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [isVisible, setIsVisible] = useState(false)
+	// Check if we're in a browser environment
+	const isBrowser = typeof window !== "undefined";
 
-  useEffect(() => {
-    // Don't run this effect on the server
-    if (!isBrowser) return
+	const [position, setPosition] = useState({ x: 0, y: 0 });
+	const [isVisible, setIsVisible] = useState(false);
 
-    const updatePosition = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY })
-      setIsVisible(true)
-    }
+	useEffect(() => {
+		// Don't run this effect on the server
+		if (!isBrowser) return;
 
-    const handleMouseLeave = () => {
-      setIsVisible(false)
-    }
+		const updatePosition = (e: MouseEvent) => {
+			setPosition({ x: e.clientX, y: e.clientY });
+			setIsVisible(true);
+		};
 
-    window.addEventListener("mousemove", updatePosition)
-    window.addEventListener("mouseleave", handleMouseLeave)
+		const handleMouseLeave = () => {
+			setIsVisible(false);
+		};
 
-    return () => {
-      window.removeEventListener("mousemove", updatePosition)
-      window.removeEventListener("mouseleave", handleMouseLeave)
-    }
-  }, [isBrowser])
-  
-  // Don't render anything on the server
-  if (!isBrowser) return null
+		window.addEventListener("mousemove", updatePosition);
+		window.addEventListener("mouseleave", handleMouseLeave);
 
-  return (
-    <div
-      className="fixed pointer-events-none z-50 w-64 h-64 rounded-full mix-blend-screen blur-xl"
-      style={{
-        backgroundImage: "linear-gradient(to right, rgba(0,212,255,0.15), rgba(0,255,136,0.15))",
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: "translate(-50%, -50%)",
-        opacity: isVisible ? 1 : 0,
-        transition: "opacity 0.3s ease",
-      }}
-    />
-  )
+		return () => {
+			window.removeEventListener("mousemove", updatePosition);
+			window.removeEventListener("mouseleave", handleMouseLeave);
+		};
+	}, [isBrowser]);
+
+	// Don't render anything on the server
+	if (!isBrowser) return null;
+
+	return (
+		<div
+			className="fixed pointer-events-none z-50 w-64 h-64 rounded-full mix-blend-screen blur-xl"
+			style={{
+				backgroundImage:
+					"linear-gradient(to right, rgba(0,212,255,0.15), rgba(0,255,136,0.15))",
+				left: `${position.x}px`,
+				top: `${position.y}px`,
+				transform: "translate(-50%, -50%)",
+				opacity: isVisible ? 1 : 0,
+				transition: "opacity 0.3s ease",
+			}}
+		/>
+	);
 }
