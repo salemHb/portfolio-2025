@@ -2,7 +2,6 @@
 
 A modern, interactive portfolio website showcasing my skills, projects, and professional experience.
 
-![Portfolio Preview](public/portfolio-preview.png)
 
 ## 🚀 Features
 
