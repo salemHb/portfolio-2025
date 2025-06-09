@@ -603,7 +603,7 @@ export default function Experience() {
 										<div className="flex items-center space-x-2 mb-2">
 											<Calendar className="w-5 h-5 text-[#00d4ff]" />
 											<span className="text-[#b4bcd0]">
-												September 2022 - April 2024
+												September 2022 - December 2023
 											</span>
 										</div>
 										<div
