@@ -615,7 +615,7 @@ export default function Experience() {
 												backgroundClip: "text",
 											}}
 										>
-											20 Months
+											15 Months
 										</div>
 									</div>
 								</div>
