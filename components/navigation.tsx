@@ -72,7 +72,7 @@ export default function Navigation() {
 	const socialLinks = [
 		{
 			name: "GitHub",
-			href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/",
+			href: process.env.NEXT_PUBLIC_GITHUB_URL || "https://github.com/salemHb",
 			icon: <Github className="w-5 h-5" />,
 		},
 		{
