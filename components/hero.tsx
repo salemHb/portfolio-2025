@@ -23,7 +23,7 @@ export default function Hero() {
 	// const y = useTransform(scrollY, [0, 300], [0, 100])
 
 	// Mission statement words for animated display
-	const missionWords = ["I", "love", "computers", "and", "coffee"];
+	const missionWords = ["I", "Love", "Computers", "and", "Coffee"];
 
 	// Floating achievements data with improved colors and styling
 	const achievements = [
