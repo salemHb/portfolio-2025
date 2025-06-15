@@ -1,4 +1,4 @@
-"use client";
+7"use client";
 
 import { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -23,7 +23,7 @@ export default function Hero() {
 	// const y = useTransform(scrollY, [0, 300], [0, 100])
 
 	// Mission statement words for animated display
-	const missionWords = ["I", "Love", "Coffee", "and", "Computers"];
+	const missionWords = ["I", "love", "computers", "and", "coffee"];
 
 	// Floating achievements data with improved colors and styling
 	const achievements = [
