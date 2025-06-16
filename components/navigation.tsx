@@ -84,7 +84,7 @@ export default function Navigation() {
 		},
 		{
 			name: "Twitter",
-			href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://x.com/salemshadyy",
+			href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://x.com/",
 			icon: <Twitter className="w-5 h-5" />,
 		},
 		{
