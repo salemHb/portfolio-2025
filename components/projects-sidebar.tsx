@@ -196,7 +196,7 @@ const projects: Project[] = [
 			"FlixClone is a front-end project that replicates the clean and interactive interface of HULU, designed to display trending movies and TV shows using The Movie Database (TMDB) API. Built with React, it fetches dynamic content in real-time and showcases responsive carousels, hover previews, and category-based filtering. The project focuses on delivering a rich user experience and is ideal for demonstrating API integration and media-based UI design skills.",
 		technologies: ["React", "TMDB API", "JavaScript", "CSS"],
 		category: "Web App",
-		difficulty: "Intermediate",
+		difficulty: "Beginner",
 		status: "Live",
 		image: "/projects/flixclone.jpg",
 		githubUrl: "https://github.com/salemHb/flixclone",
