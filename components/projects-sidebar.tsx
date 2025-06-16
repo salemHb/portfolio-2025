@@ -67,7 +67,7 @@ const projects: Project[] = [
 		category: "Web App",
 		difficulty: "Intermediate",
 		status: "Live",
-		image: "/projects/1.jpg",
+		image: "/projects/1.png",
 		githubUrl: "https://github.com/salemHb/nai-search",
 		liveUrl: "https://nai-search.vercel.app/",
 		challenges: [
@@ -114,7 +114,7 @@ const projects: Project[] = [
 		category: "Web App",
 		difficulty: "Intermediate",
 		status: "Live",
-		image: "/projects/portfolio-2025.jpg",
+		image: "/projects/portfolio-2025.png",
 		githubUrl: "https://github.com/salemHb/portfolio-2025",
 		liveUrl: "https://babu-lake.vercel.app/",
 		challenges: [
@@ -198,7 +198,7 @@ const projects: Project[] = [
 		category: "Web App",
 		difficulty: "Beginner",
 		status: "Live",
-		image: "/projects/flixclone.jpg",
+		image: "/projects/flixclone.png",
 		githubUrl: "https://github.com/salemHb/flixclone",
 		liveUrl: "https://flixhqo.vercel.app/",
 		challenges: [
