@@ -30,7 +30,7 @@ export default function Home() {
 				<About />
 				<Experience />
 				{/* <CommunityImpact /> */}
-				{/* <ProjectsSidebar /> */}
+				<ProjectsSidebar />
 				<Contact />
 				<Footer />
 
