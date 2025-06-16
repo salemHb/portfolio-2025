@@ -187,7 +187,7 @@ const projects: Project[] = [
 
 	{
 		id: 4,
-		title: "FlixClone – HULU UI Clone",
+		title: "FlixClone  HULU UI Clone",
 		tagline:
 			"A responsive HULU-style streaming interface built with React and TMDB API",
 		description:
