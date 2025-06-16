@@ -177,7 +177,7 @@ export default function Navigation() {
 						<GradientMagicButton
 							href={
 								process.env.NEXT_PUBLIC_RESUME_LINK ||
-								"https://docs.google.com/document/d/1dmG493cZk-pRo33c7RsBAsWsCs2-UFEyHMOYQAzqzbo/edit?usp=sharing"
+								"https://docs.google.com/document/d/1LoO50PexH2T-_XBn4TG2Lcph_j7Zprg4ELeDMFEHuiE/edit?usp=sharing"
 							}
 							className={cn(
 								"inline-flex items-center space-x-2 px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl text-white [&_*]:!text-white"
