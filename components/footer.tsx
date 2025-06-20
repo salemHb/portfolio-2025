@@ -138,7 +138,7 @@ export default function Footer() {
 		},
 		{
 			name: "Twitter",
-			href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://x.com/",
+			href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://x.com/salemshadyy",
 			icon: <Twitter className="w-5 h-5" />,
 		},
 		{
