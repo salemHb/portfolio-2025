@@ -761,7 +761,7 @@ const skillsData: SidebarItem[] = [
     description: "Version control, CI/CD, and containerization tools",
     longDescription:
       "Essential DevOps tools and practices that streamline development workflows, ensure code quality, and enable efficient deployment and scaling of applications.",
-    skills: ["Git", "GitHub", "GitLab", "CircleCI", "GitHub Actions", "Docker"],
+    skills: ["Git", "GitHub", "GitLab", "CircleCI", "GitHub Actions", "RabbitMQ","Docker"],
     category: "DevOps",
     icon: <Server />,
     dateUpdated: "2024-01-05",
@@ -809,7 +809,7 @@ const skillsData: SidebarItem[] = [
     description: "Content management systems and additional technologies",
     longDescription:
       "Content management systems and specialized technologies that enhance development capabilities and provide solutions for specific use cases.",
-    skills: ["Sanity", "Shopify", "HygraphCMS", "RabbitMQ"],
+    skills: ["Sanity", "Shopify", "HygraphCMS"],
     category: "CMS",
     icon: <FileCode />,
     dateUpdated: "2023-12-05",
