@@ -26,7 +26,7 @@ export default function SkillsSidebarLayout() {
       name: "Languages",
       icon: <Languages className="w-5 h-5" />,
       description: "Core programming languages and markup technologies I use daily",
-      skills: ["HTML5", "CSS3", "Python", "JavaScript (ES6)", "TypeScript", "GraphQL", "SQL"],
+      skills: ["HTML5", "CSS3", "PHP", "JavaScript (ES6)", "TypeScript", "GraphQL", "SQL"],
     },
     {
       id: "frameworks",
