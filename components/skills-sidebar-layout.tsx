@@ -50,7 +50,7 @@ export default function SkillsSidebarLayout() {
       name: "DevOps & Tools",
       icon: <Server className="w-5 h-5" />,
       description: "Version control, CI/CD, and containerization tools",
-      skills: ["Git", "GitHub", "GitLab", "CircleCI", "GitHub Actions", "Docker"],
+      skills: ["Git", "GitHub", "GitLab", "CircleCI", "GitHub Actions","RabbitMQ", "Docker"],
     },
     {
       id: "cloud",
@@ -78,7 +78,7 @@ export default function SkillsSidebarLayout() {
       name: "CMS & Others",
       icon: <FileCode className="w-5 h-5" />,
       description: "Content management systems and additional technologies",
-      skills: ["Sanity", "Shopify", "HygraphCMS", "RabbitMQ"],
+      skills: ["Sanity", "Shopify", "HygraphCMS"],
     },
   ]
 
