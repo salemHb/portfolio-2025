@@ -22,7 +22,7 @@ export default function SkillsSection() {
       name: "Languages",
       icon: <Languages className="w-4 h-4" />,
       color: "bg-blue-500",
-      skills: ["HTML5", "CSS3", "Python", "JavaScript (ES6)", "TypeScript", "GraphQL", "SQL"],
+      skills: ["HTML5", "CSS3", "PHP", "JavaScript (ES6)", "TypeScript", "GraphQL", "SQL"],
     },
     {
       name: "Frameworks & Libraries",
@@ -32,6 +32,7 @@ export default function SkillsSection() {
         "React",
         "Next.js",
         "Node.js",
+        "Laravel",
         "Express.js",
         "Flask",
         "FastAPI",
@@ -44,7 +45,7 @@ export default function SkillsSection() {
       name: "DevOps & Tools",
       icon: <Server className="w-4 h-4" />,
       color: "bg-purple-500",
-      skills: ["Git", "GitHub", "GitLab", "CircleCI", "GitHub Actions", "Docker"],
+      skills: ["Git", "GitHub", "GitLab", "CircleCI", "GitHub Actions", "RabbitMQ", "Docker"],
     },
     {
       name: "Cloud Platforms",
@@ -68,7 +69,7 @@ export default function SkillsSection() {
       name: "CMS & Others",
       icon: <FileCode className="w-4 h-4" />,
       color: "bg-indigo-500",
-      skills: ["Sanity", "Shopify", "HygraphCMS", "RabbitMQ"],
+      skills: ["Sanity", "Shopify", "HygraphCMS"],
     },
   ]
 
