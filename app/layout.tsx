@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 		template: "%s | Hussein Salim",
 	},
 	description:
-		"Explore the work of Hussein Salim, a passionate software engineer specializing in scalable, high-performance full-stack applications built with React, Next.js, TypeScript, and Python. Delivering user-centric digital solutions with clean code and modern architecture.",
+		"Explore the work of Hussein Salim, a passionate software engineer specializing in scalable, high-performance full-stack applications built with React, Next.js, TypeScript, and PHP. Delivering user-centric digital solutions with clean code and modern architecture.",
 
 	keywords: [
 		"Hussein Salim",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 		"Next.js Developer",
 		"JavaScript Developer",
 		"TypeScript Developer",
-		"Python Developer",
+		"PHP Developer",
 		"Node.js Developer",
 		"Tailwind CSS",
 		"Web Performance Optimization",
