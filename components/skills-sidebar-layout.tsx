@@ -38,6 +38,7 @@ export default function SkillsSidebarLayout() {
         "Next.js",
         "Node.js",
         "Express.js",
+        "Laravel",
         "Flask",
         "FastAPI",
         "Bootstrap5",
