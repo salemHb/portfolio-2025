@@ -43,7 +43,7 @@ export default function Hero() {
 		{ name: "React", symbol: "⚛️", x: 15, y: 20, size: 24, delay: 0 },
 		{ name: "JavaScript", symbol: "JS", x: 85, y: 15, size: 20, delay: 0 },
 		{ name: "TypeScript", symbol: "TS", x: 75, y: 85, size: 22, delay: 0 },
-		{ name: "Python", symbol: "🐍", x: 10, y: 70, size: 26, delay: 0 },
+		{ name: "Laravel", symbol: "🐘", x: 10, y: 70, size: 26, delay: 0 },
 		{ name: "AWS", symbol: "☁️", x: 60, y: 40, size: 28, delay: 0 },
 		{ name: "Node.js", symbol: "🟢", x: 30, y: 90, size: 18, delay: 0 },
 		{ name: "GraphQL", symbol: "◢", x: 90, y: 60, size: 20, delay: 0 },
