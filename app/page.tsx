@@ -1,7 +1,7 @@
 "use client";
 
 import Hero from "@/components/hero";
-// import AchievementsSection from "@/components/achievements-section";
+import AchievementsSection from "@/components/achievements-section";
 import Navigation from "@/components/navigation";
 import About from "@/components/about";
 import Experience from "@/components/experience";
@@ -26,7 +26,7 @@ export default function Home() {
 			<div className="relative z-10">
 				<Navigation />
 				<Hero />
-{/* 				<AchievementsSection /> */}
+				<AchievementsSection /> 
 				<About />
 				<Experience />
 				{/* <CommunityImpact /> */}
