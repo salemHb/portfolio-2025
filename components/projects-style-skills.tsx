@@ -720,7 +720,7 @@ const skillsData: SidebarItem[] = [
     skills: [
       "HTML5",
       "CSS3",
-      "Python",
+      "PHP",
       "JavaScript (ES6)",
       "TypeScript",
       "GraphQL",
@@ -743,6 +743,7 @@ const skillsData: SidebarItem[] = [
       "Next.js",
       "Node.js",
       "Express.js",
+      "Laravel",
       "Flask",
       "FastAPI",
       "Bootstrap5",
