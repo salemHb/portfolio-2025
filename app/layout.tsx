@@ -16,7 +16,7 @@ const baseUrl = isProduction ? "https://babu" : ""; // Use relative URLs in deve
 
 export const metadata: Metadata = {
 	title: {
-		default: "Hussein Salim | Software Developer",
+		default: "Hussein Salim | Software Engineer",
 		template: "%s | Hussein Salim",
 	},
 	description:
