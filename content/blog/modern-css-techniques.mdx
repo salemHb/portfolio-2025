@@ -1,0 +1,259 @@
+---
+title: "Modern CSS Techniques Every Developer Should Know in 2024"
+date: "2024-12-05"
+excerpt: "CSS has evolved dramatically in recent years. From container queries to cascade layers, here are the modern techniques that will make you a more effective developer."
+tags: ["CSS", "Frontend", "Web Development", "Modern Techniques"]
+---
+
+# Modern CSS Techniques Every Developer Should Know in 2024
+
+CSS has come a long way from the days of float-based layouts and browser-specific prefixes. Modern CSS is more powerful, expressive, and developer-friendly than ever before. Let's explore the techniques that are reshaping how we build for the web.
+
+## Container Queries: The Game Changer
+
+Container queries allow components to respond to their container's size rather than the viewport. This is revolutionary for component-based architectures.
+
+\`\`\`css
+.card-container {
+container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+.card {
+display: grid;
+grid-template-columns: 1fr 2fr;
+}
+}
+\`\`\`
+
+## CSS Grid: Beyond the Basics
+
+While CSS Grid isn't new, many developers only scratch the surface. Here are advanced techniques:
+
+### Subgrid
+
+\`\`\`css
+.parent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+}
+
+.child {
+display: grid;
+grid-column: span 2;
+grid-template-columns: subgrid;
+}
+\`\`\`
+
+### Named Grid Lines
+
+\`\`\`css
+.layout {
+display: grid;
+grid-template-columns:
+[sidebar-start] 250px
+[content-start] 1fr
+[content-end];
+}
+\`\`\`
+
+## Cascade Layers: Taming Specificity
+
+Cascade layers give you explicit control over the cascade without relying on specificity hacks.
+
+\`\`\`css
+@layer reset, base, components, utilities;
+
+@layer reset {
+
+- { margin: 0; padding: 0; }
+  }
+
+@layer components {
+.button {
+padding: 1rem 2rem;
+background: blue;
+}
+}
+\`\`\`
+
+## Custom Properties: Dynamic Styling
+
+CSS custom properties (variables) enable dynamic theming and component customization.
+
+\`\`\`css
+:root {
+--primary-hue: 220;
+--primary-sat: 100%;
+--primary-light: 50%;
+}
+
+.button {
+background: hsl(
+var(--primary-hue)
+var(--primary-sat)
+var(--primary-light)
+);
+}
+
+.button:hover {
+--primary-light: 40%;
+}
+\`\`\`
+
+## Logical Properties: International-Ready CSS
+
+Logical properties make your CSS work better with different writing modes and directions.
+
+\`\`\`css
+/_ Instead of margin-left _/
+.element {
+margin-inline-start: 1rem;
+padding-block: 2rem;
+border-inline-end: 1px solid gray;
+}
+\`\`\`
+
+## Modern Selectors
+
+### :has() - The Parent Selector
+
+\`\`\`css
+/_ Style a card that contains an image _/
+.card:has(img) {
+display: grid;
+grid-template-columns: 1fr 2fr;
+}
+\`\`\`
+
+### :is() and :where()
+
+\`\`\`css
+/_ More readable selector grouping _/
+:is(h1, h2, h3):hover {
+color: blue;
+}
+
+/_ Zero specificity with :where() _/
+:where(h1, h2, h3) {
+margin-block: 1rem;
+}
+\`\`\`
+
+## Color Functions and Spaces
+
+Modern CSS offers sophisticated color manipulation:
+
+\`\`\`css
+.element {
+/_ Relative color syntax _/
+background: hsl(from var(--primary) h s calc(l \* 0.8));
+
+/_ Color mixing _/
+border-color: color-mix(in srgb, var(--primary) 80%, white);
+}
+\`\`\`
+
+## Intrinsic Web Design
+
+Move beyond fixed breakpoints to truly responsive design:
+
+\`\`\`css
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: clamp(1rem, 4vw, 2rem);
+}
+
+.text {
+font-size: clamp(1rem, 4vw, 2rem);
+}
+\`\`\`
+
+## Performance Considerations
+
+Modern CSS also brings performance improvements:
+
+### content-visibility
+
+\`\`\`css
+.long-content {
+content-visibility: auto;
+contain-intrinsic-size: 1000px;
+}
+\`\`\`
+
+### CSS Containment
+
+\`\`\`css
+.component {
+contain: layout style paint;
+}
+\`\`\`
+
+## Browser Support Strategy
+
+Not all modern features are universally supported. Use progressive enhancement:
+
+\`\`\`css
+.grid {
+display: flex;
+flex-wrap: wrap;
+}
+
+@supports (display: grid) {
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+}
+\`\`\`
+
+## Tools for Modern CSS
+
+- **PostCSS**: Transform modern CSS for older browsers
+- **Lightning CSS**: Fast CSS bundler and transformer
+- **Sass**: Still relevant for complex projects
+- **CSS-in-JS**: Consider for component-heavy applications
+
+## Key Takeaways
+
+1. **Embrace container queries**: They're the future of responsive design
+2. **Master CSS Grid**: Go beyond basic layouts
+3. **Use cascade layers**: Take control of specificity
+4. **Think logically**: Use logical properties for international sites
+5. **Progressive enhancement**: Use modern features with fallbacks
+
+Modern CSS is incredibly powerful, but with great power comes great responsibility. Use these techniques thoughtfully, always considering your users and their browsers.
+
+What modern CSS techniques have you found most useful in your projects? Are there any that have significantly changed how you approach styling?
+\`\`\`
+
+```typescriptreact file="app/page.tsx"
+[v0-no-op-code-block-prefix]import Navigation from "@/components/navigation"
+import Hero from "@/components/hero"
+import Projects from "@/components/projects"
+import Skills from "@/components/skills"
+import Timeline from "@/components/timeline"
+import Contact from "@/components/contact"
+import Footer from "@/components/footer"
+import BlogSection from "@/components/blog-section"
+import { getLatestPosts } from "@/lib/blog"
+
+export default function Home() {
+  const latestPosts = getLatestPosts(3)
+
+  return (
+    <main className="min-h-screen">
+      <Navigation />
+      <Hero />
+      <Projects />
+      <Skills />
+      <Timeline />
+      <BlogSection posts={latestPosts} />
+      <Contact />
+      <Footer />
+    </main>
+  )
+}
+```
