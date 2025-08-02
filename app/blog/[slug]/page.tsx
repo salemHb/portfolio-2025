@@ -1,6 +1,7 @@
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getAllPosts, getPostBySlug } from "@/lib/blog-server";
 import type { Metadata } from "next";
 import { BlogPostPageClient } from "./BlogPostPageClient";
+import { notFound } from "next/navigation";
 
 interface BlogPostPageProps {
   params: {
@@ -33,5 +34,9 @@ export async function generateMetadata({
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-  return <BlogPostPageClient params={params} />;
+  const post = getPostBySlug(params.slug); // ✅ This is OK here on server
+
+  if (!post) notFound();
+
+  return <BlogPostPageClient post={post} />;
 }

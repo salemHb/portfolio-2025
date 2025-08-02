@@ -119,7 +119,7 @@ export default function BlogSection({ posts }: BlogSectionProps) {
                   </div>
                   <div className="flex items-center gap-1">
                     <Clock className="w-3 h-3" />
-                    <span>{post.readTime}</span>
+                    <span>3 min read</span>
                   </div>
                 </div>
 

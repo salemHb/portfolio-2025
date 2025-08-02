@@ -7,9 +7,10 @@ import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import BlogSection from "@/components/blog-section";
 import { getLatestPosts } from "@/lib/blog";
+import { BlogPost } from "@/lib/blog";
 
 export default function Home() {
-  const latestPosts = getLatestPosts(3);
+  const latestPosts: BlogPost[] = getLatestPosts(3);
 
   return (
     <main className="min-h-screen">

@@ -4,12 +4,16 @@ import { useState, useEffect } from "react";
 import ThemeToggle from "./theme-toggle";
 
 const quotes = [
-  "👨🏽‍💻 Building something fun...",
-  "💡 Always learning, always curious",
-  "📍 Nairobi, Kenya",
-  "🎯 Focused on creativity and code",
-  "☕ Fueled by coffee and JavaScript",
-  "🎧 Listening to lo-fi while coding",
+  "👩🏻‍💻 Beep boop boop",
+  "🎵 Listening: House Piano",
+  "🎶 Listening: Burna Boy",
+  "🎵 Listening: No Sign of Weakness",
+  "🎶 Listening: Rodwave",
+  "📖 Reading: Biko Zulu",
+  "📺 Watching: Ash vs Evil Dead",
+  "📺 Watching: Family guy",
+  "📺 Watching: Joe Rogan",
+  "🎮 Playing: COD",
 ];
 
 export default function Navigation() {
@@ -57,7 +61,13 @@ export default function Navigation() {
 
           {/* Right - Links + Toggle */}
           <div className="hidden md:flex items-center flex-1 justify-end gap-4">
-            <hr className="column undivided title-rule mr-4 flex-grow border-0 border-t border-[var(--color-border)]" />
+            <hr className="column undivided quote ml-4 flex-grow border-0 border-t border-[var(--color-border)]" />
+            <a
+              href="/blog"
+              className="hover:text-[var(--color-accent)] transition-colors"
+            >
+              MidnightThoughts
+            </a>
             <a
               href="https://medium.com"
               className="hover:text-[var(--color-accent)] transition-colors"
@@ -67,12 +77,12 @@ export default function Navigation() {
               Medium
             </a>
             <a
-              href="https://dribbble.com"
+              href="https://github.com/salemHb"
               className="hover:text-[var(--color-accent)] transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Dribbble
+              Github
             </a>
             <a
               href="https://x.com"
@@ -83,14 +93,13 @@ export default function Navigation() {
               X
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/hussein-salim-619007b8/"
               className="hover:text-[var(--color-accent)] transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
               LinkedIn
             </a>
-            <ThemeToggle />
           </div>
         </div>
 
