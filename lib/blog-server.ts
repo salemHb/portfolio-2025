@@ -1,31 +1,9 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-
-// Define BlogPost type with full properties
-export type BlogPost = {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt?: string;
-  tags: string[];
-  content: string;
-  readTime: string;
-};
-
-// Path to blog content folder
+import { BlogPost } from "./blog";
 const postsDirectory = path.join(process.cwd(), "content", "blog");
 
-// Util to format date (e.g., Aug 2, 2025)
-export function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}
-
-// Read file content and frontmatter by slug
 export function getPostBySlug(slug: string): BlogPost | null {
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
   if (!fs.existsSync(fullPath)) return null;
@@ -44,7 +22,6 @@ export function getPostBySlug(slug: string): BlogPost | null {
   };
 }
 
-// Get all blog posts
 export function getAllPosts(): BlogPost[] {
   const fileNames = fs
     .readdirSync(postsDirectory)
@@ -59,12 +36,6 @@ export function getAllPosts(): BlogPost[] {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-// Get latest N posts
-export function getLatestPosts(count: number): BlogPost[] {
-  return getAllPosts().slice(0, count);
-}
-
-// Estimate read time from word count
 function calculateReadTime(content: string): string {
   const wordsPerMinute = 200;
   const numberOfWords = content.trim().split(/\s+/).length;

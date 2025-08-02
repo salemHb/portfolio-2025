@@ -11,21 +11,6 @@ Building React applications that can scale from a small prototype to a large ent
 
 ## The Foundation: Project Structure
 
-One of the most critical decisions you'll make is how to structure your project. Here's the approach I've found most effective:
-
-\`\`\`
-src/
-├── components/
-│ ├── ui/ # Reusable UI components
-│ ├── forms/ # Form-specific components
-│ └── layout/ # Layout components
-├── features/ # Feature-based modules
-├── hooks/ # Custom hooks
-├── lib/ # Utilities and configurations
-├── stores/ # State management
-└── types/ # TypeScript definitions
-\`\`\`
-
 ## State Management: Choose Wisely
 
 The React ecosystem offers numerous state management solutions, and choosing the right one can make or break your application's scalability.
@@ -55,12 +40,11 @@ const Dashboard = lazy(() => import('./Dashboard'))
 
 function App() {
 return (
+
 <Suspense fallback={<Loading />}>
-<Dashboard />
+  <Dashboard />
 </Suspense>
-)
-}
-\`\`\`
+) } \`\`\`
 
 ### 2. Memoization
 
@@ -89,4 +73,3 @@ A scalable application needs a robust testing strategy:
 Building scalable React applications is a journey, not a destination. Each project teaches you something new, and the landscape continues to evolve. The key is to stay curious, keep learning, and always prioritize the user experience.
 
 What challenges have you faced when scaling React applications? I'd love to hear your experiences and lessons learned.
-\`\`\`
