@@ -55,7 +55,7 @@ export default function Navigation() {
               href="#home"
               className="text-lg font-semibold text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors"
             >
-              Mr Babu
+              Hussein
             </a>
           </div>
 
@@ -66,7 +66,7 @@ export default function Navigation() {
               href="/blog"
               className="hover:text-[var(--color-accent)] transition-colors"
             >
-              MidnightThoughts
+              Latenight Rants
             </a>
             <a
               href="https://medium.com"
