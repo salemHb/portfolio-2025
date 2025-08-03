@@ -16,10 +16,11 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
+      <BlogSection posts={latestPosts} />
       <Projects />
       <Skills />
       <Timeline />
-      <BlogSection posts={latestPosts} />
+
       <Contact />
       <Footer />
     </main>
