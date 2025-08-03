@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hussein Salim | Senior Software Developer",
+  title: "Hussein Salim | Fullstack Software Developer",
   description:
-    "Senior Software Developer crafting digital experiences with precision and purpose. Specializing in full-stack development and modern web technologies.",
+    "Software developer crafting digital experiences with precision and purpose. Specializing in full-stack development and modern web technologies.",
   keywords: [
     "Hussein Salim",
     "Software Developer",
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Hussein Salim | Senior Software Developer",
     description:
-      "Senior Software Developer crafting digital experiences with precision and purpose.",
+      "Software developer crafting digital experiences with precision and purpose.",
     siteName: "Hussein Salim Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hussein Salim | Senior Software Developer",
+    title: "Hussein Salim | Software Developer",
     description:
       "Senior Software Developer crafting digital experiences with precision and purpose.",
     creator: "@salemshadyy",
