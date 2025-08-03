@@ -35,16 +35,19 @@ Performance isn't just about making things fast—it's about making them feel fa
 
 Use React's `lazy()` and `Suspense` to split your code at the route level:
 
-\`\`\`jsx
-const Dashboard = lazy(() => import('./Dashboard'))
+```jsx
+import { lazy, Suspense } from "react";
+
+const Dashboard = lazy(() => import("./Dashboard"));
 
 function App() {
-return (
-
-<Suspense fallback={<Loading />}>
-  <Dashboard />
-</Suspense>
-) } \`\`\`
+  return (
+    <Suspense fallback={<Loading />}>
+      <Dashboard />
+    </Suspense>
+  );
+}
+```
 
 ### 2. Memoization
 
