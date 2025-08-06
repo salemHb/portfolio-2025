@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { BookOpen, ArrowRight, Calendar, Clock } from "lucide-react";
+import { BookOpen, ArrowRight } from "lucide-react";
+import TiltCard from "./tilt-card";
 import { formatDate } from "@/lib/format";
 import type { BlogPost } from "@/lib/blog";
 
@@ -24,78 +25,39 @@ export default function BlogSection({ posts }: BlogSectionProps) {
           </Link>
         </div>
 
-        {posts.length === 0 ? (
-          <div className="card text-center py-12 fade-in">
-            <div className="text-4xl mb-4">✍️</div>
-            <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
-            <p className="text-[var(--color-text-secondary)]">
-              I'm working on some interesting articles about development,
-              design, and technology. Check back soon!
-            </p>
-          </div>
-        ) : (
-          <div className="grid md:grid-cols-3 gap-6">
-            {posts.map((post, index) => (
-              <article
+        <div className="flex flex-wrap gap-6 justify-center">
+          {posts.length === 0 ? (
+            <TiltCard>
+              <div className="text-center py-8">
+                <div className="text-4xl mb-4">✍️</div>
+                <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
+                <p className="text-[var(--color-text-secondary)]">
+                  Articles about development, design, and technology are on the
+                  way. Check back soon!
+                </p>
+              </div>
+            </TiltCard>
+          ) : (
+            posts.map((post, index) => (
+              <TiltCard
                 key={post.slug}
-                className="card group hover:scale-[1.02] transition-all duration-300 fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                href={`/blog/${post.slug}`}
+                delay={index * 0.1}
               >
-                <div className="flex flex-col h-full">
-                  {post.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {post.tags.slice(0, 2).map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 text-xs bg-[var(--color-surface-elevated)] text-[var(--color-text-secondary)] rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                      {post.tags.length > 2 && (
-                        <span className="px-2 py-1 text-xs text-[var(--color-text-tertiary)]">
-                          +{post.tags.length - 2} more
-                        </span>
-                      )}
-                    </div>
-                  )}
-
-                  <h3 className="text-lg font-semibold mb-3 group-hover:text-[var(--color-accent)] transition-colors">
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="hover:underline"
-                    >
-                      {post.title}
-                    </Link>
-                  </h3>
-
-                  <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-4 flex-grow">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between text-xs text-[var(--color-text-tertiary)] pt-4 border-t border-[var(--color-border)]">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
-                      <time dateTime={post.date}>{formatDate(post.date)}</time>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      <span>3 min read</span>
-                    </div>
-                  </div>
-
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-1 text-sm text-[var(--color-accent)] hover:gap-2 transition-all mt-3 group-hover:translate-x-1"
-                  >
-                    Read more
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
+                <h3 className="text-lg font-semibold mb-3">{post.title}</h3>
+                <p className="text-sm text-[var(--color-text-secondary)] mb-4">
+                  {post.excerpt}
+                </p>
+                <time
+                  dateTime={post.date}
+                  className="text-xs text-[var(--color-text-tertiary)]"
+                >
+                  {formatDate(post.date)}
+                </time>
+              </TiltCard>
+            ))
+          )}
+        </div>
       </div>
     </section>
   );
