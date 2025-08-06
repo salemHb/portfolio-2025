@@ -145,3 +145,19 @@ p {
   opacity: 1;
   transform: translateY(0);
 }
+
+@keyframes tilt {
+  0% {
+    transform: rotate(-2deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(2deg) translateY(-5px);
+  }
+  100% {
+    transform: rotate(-2deg) translateY(0px);
+  }
+}
+
+.card-tilt {
+  animation: tilt 5s ease-in-out infinite;
+}

@@ -1,28 +1,15 @@
 import Navigation from "@/components/navigation";
-import Hero from "@/components/hero";
-import Projects from "@/components/projects";
-import Skills from "@/components/skills";
-import Timeline from "@/components/timeline";
-import Contact from "@/components/contact";
-import Footer from "@/components/footer";
-import BlogSection from "@/components/blog-section";
-import { getLatestPosts } from "@/lib/blog";
-import { BlogPost } from "@/lib/blog";
+import ScatterPage from "@/components/scatter-page";
+
+import { getLatestPosts } from "@/lib/blog"; // this can use fs because it's server-side
 
 export default function Home() {
-  const latestPosts: BlogPost[] = getLatestPosts(3);
+  const latestPosts = getLatestPosts(3); // runs on server
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen flex flex-col">
       <Navigation />
-      <Hero />
-      <BlogSection posts={latestPosts} />
-      <Projects />
-      <Skills />
-      <Timeline />
-
-      <Contact />
-      <Footer />
+      <ScatterPage posts={latestPosts} />
     </main>
   );
 }
