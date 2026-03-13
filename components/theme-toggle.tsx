@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
-export default function ThemeToggle() {
+interface ThemeToggleProps {
+  className?: string;
+}
+
+export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
   const [mounted, setMounted] = useState(false);
 
@@ -44,13 +48,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="btn btn-secondary"
+      className={`p-2 rounded-full hover:bg-[var(--color-border)] transition-colors ${className}`}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
       {theme === "light" ? (
-        <Moon className="w-4 h-4" />
+        <Moon className="w-4 h-4 text-[var(--color-text-primary)]" />
       ) : (
-        <Sun className="w-4 h-4" />
+        <Sun className="w-4 h-4 text-[var(--color-text-primary)]" />
       )}
     </button>
   );

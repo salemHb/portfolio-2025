@@ -19,7 +19,7 @@ export default function TiltCard({ children, href, delay = 0 }: TiltCardProps) {
 
   const cardInner = (
     <div
-      className={`bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg shadow-lg p-6 transition-transform duration-300 ease-out fade-in`}
+      className={`bg-[var(--color-background)] border border-[var(--color-border)] rounded-lg shadow-lg p-4 sm:p-5 md:p-6 transition-transform duration-300 ease-out fade-in`}
       style={{
         transform: `rotate(${rotation}deg)`,
         animationDelay: `${delay}s`,

@@ -48,40 +48,50 @@ export default function Projects() {
   return (
     <section id="work" className="section">
       <div className="container">
-        <h2 className="mb-12">Selected Work</h2>
-        <div className="flex flex-wrap gap-6 justify-center">
+        <h2 className="mb-8 sm:mb-12 text-center">Selected Work</h2>
+        <div className="flex flex-wrap gap-4 sm:gap-6 justify-center max-w-6xl mx-auto">
           {projects.map((p, i) => (
             <TiltCard
               key={p.id}
               href={p.links.live || p.links.github}
               delay={i * 0.1}
             >
-              <h3 className="font-semibold mb-2">{p.title}</h3>
-              <p className="text-sm text-[var(--color-text-secondary)] mb-4">
+              <h3 className="font-semibold mb-2 text-base sm:text-lg">{p.title}</h3>
+              <p className="text-xs sm:text-sm text-[var(--color-text-secondary)] mb-4">
                 {p.description}
               </p>
               <div className="flex flex-wrap gap-1 mb-4">
                 {p.tech.map((t) => (
                   <span
                     key={t}
-                    className="text-xs bg-[var(--color-surface-elevated)] px-2 py-1 rounded-full"
+                    className="text-xs sm:text-xs bg-[var(--color-surface-elevated)] px-2 py-1 rounded-full border border-[var(--color-border)]"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-              <div className="flex gap-3 text-sm">
+              <div className="flex flex-wrap gap-3 text-xs sm:text-sm">
                 {p.links.github && (
                   <span className="flex items-center gap-1">
-                    <Github className="w-4 h-4" /> Code
+                    <Github className="w-3 h-3 sm:w-4 sm:h-4" /> Code
                   </span>
                 )}
                 {p.links.live && (
                   <span className="flex items-center gap-1">
-                    <ExternalLink className="w-4 h-4" /> Live
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" /> Live
+                    <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
                   </span>
                 )}
+              </div>
+              <div className="mt-2 text-xs text-[var(--color-text-tertiary)] flex justify-between">
+                <span>{p.year}</span>
+                <span className={`px-2 py-0.5 rounded-full text-xs ${
+                  p.status === "Live"
+                    ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+                    : "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
+                }`}>
+                  {p.status}
+                </span>
               </div>
             </TiltCard>
           ))}

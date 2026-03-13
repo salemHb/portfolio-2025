@@ -28,16 +28,16 @@ export default function Skills() {
   return (
     <section id="about" className="section">
       <div className="container">
-        <h2 className="mb-12">Technologies & Tools</h2>
-        <div className="flex flex-wrap gap-6 justify-center">
+        <h2 className="mb-8 sm:mb-12 text-center">Technologies & Tools</h2>
+        <div className="flex flex-wrap gap-4 sm:gap-6 justify-center max-w-4xl mx-auto">
           {skillCategories.map((cat, i) => (
             <TiltCard key={cat.category} delay={i * 0.1}>
-              <h4 className="font-semibold mb-3">{cat.category}</h4>
-              <div className="flex flex-wrap gap-2">
+              <h4 className="font-semibold mb-3 text-center">{cat.category}</h4>
+              <div className="flex flex-wrap justify-center gap-2">
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 text-sm bg-[var(--color-surface-elevated)] rounded-full border border-[var(--color-border)]"
+                    className="px-3 py-1 text-xs sm:text-sm bg-[var(--color-surface-elevated)] rounded-full border border-[var(--color-border)]"
                   >
                     {skill}
                   </span>

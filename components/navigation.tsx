@@ -62,32 +62,27 @@ export default function Navigation() {
         <div className="flex w-full items-center justify-between text-sm font-semibold text-[var(--color-text-secondary)]">
           {/* Left - Quote */}
           <div className="hidden md:flex items-center flex-1 justify-start">
-            <span className="whitespace-nowrap">{quote}</span>
-            <hr className="column undivided quote ml-4 flex-grow border-0 border-t border-[var(--color-border)]" />
+            <span className="whitespace-nowrap font-medium">{quote}</span>
+            <hr className="ml-4 flex-grow border-0 border-t border-[var(--color-border)]" />
           </div>
 
           {/* Center - Title */}
           <div className="flex-1 text-center">
             <a
               href="#home"
-              className="text-lg font-semibold text-[var(--color-text-primary)] transition-colors"
+              className="text-lg font-bold text-[var(--color-text-primary)] transition-colors hover:text-[var(--color-primary)]"
             >
               {hoverWords("Hussein")}
             </a>
           </div>
 
           {/* Right - Desktop Links */}
-          <div className="hidden md:flex items-center flex-1 justify-end gap-4">
-            <hr className="column undivided quote ml-4 flex-grow border-0 border-t border-[var(--color-border)]" />
+          <div className="hidden md:flex items-center flex-1 justify-end gap-6">
+            <hr className="ml-4 flex-grow border-0 border-t border-[var(--color-border)]" />
             {[
-              { text: "Latenight Rants", href: "/blog" },
-              { text: "Medium", href: "https://medium.com" },
-              { text: "Github", href: "https://github.com/salemHb" },
-              { text: "X", href: "https://x.com" },
-              {
-                text: "LinkedIn",
-                href: "https://www.linkedin.com/in/hussein-salim-619007b8/",
-              },
+              { text: "Blog", href: "/blog" },
+              { text: "GitHub", href: "https://github.com/salemHb" },
+              { text: "LinkedIn", href: "https://www.linkedin.com/in/hussein-salim-619007b8/" },
             ].map((link, idx) => (
               <a
                 key={idx}
@@ -98,18 +93,20 @@ export default function Navigation() {
                     ? "noopener noreferrer"
                     : undefined
                 }
-                className="transition-colors"
+                className="transition-colors hover:text-[var(--color-primary)]"
               >
                 {hoverWords(link.text)}
               </a>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Hamburger */}
           <div className="md:hidden flex items-center">
+            <ThemeToggle className="mr-4" />
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="focus:outline-none"
+              className="focus:outline-none p-1"
             >
               <svg
                 className="w-6 h-6 text-[var(--color-text-primary)]"
@@ -139,20 +136,15 @@ export default function Navigation() {
 
         {/* Mobile Menu with slide-down animation */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            menuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out w-full mt-2 ${
+            menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="flex flex-col items-center gap-4 text-[var(--color-text-primary)]">
+          <div className="flex flex-col items-center gap-4 py-4 border-t border-[var(--color-border)]">
             {[
-              { text: "Latenight Rants", href: "/blog" },
-              { text: "Medium", href: "https://medium.com" },
-              { text: "Github", href: "https://github.com/salemHb" },
-              { text: "X", href: "https://x.com" },
-              {
-                text: "LinkedIn",
-                href: "https://www.linkedin.com/in/hussein-salim-619007b8/",
-              },
+              { text: "Blog", href: "/blog" },
+              { text: "GitHub", href: "https://github.com/salemHb" },
+              { text: "LinkedIn", href: "https://www.linkedin.com/in/hussein-salim-619007b8/" },
             ].map((link, idx) => (
               <a
                 key={idx}
@@ -163,7 +155,8 @@ export default function Navigation() {
                     ? "noopener noreferrer"
                     : undefined
                 }
-                className="transition-colors"
+                className="transition-colors hover:text-[var(--color-primary)] text-[var(--color-text-primary)] font-medium"
+                onClick={() => setMenuOpen(false)} // Close menu after selection
               >
                 {hoverWords(link.text)}
               </a>
@@ -172,12 +165,12 @@ export default function Navigation() {
         </div>
 
         {/* Footer signature */}
-        <span className="text-xs mt-2 text-[var(--color-text-tertiary)]">
+        <span className="text-xs mt-2 text-[var(--color-text-tertiary)] font-medium">
           @thirty3solutions
         </span>
 
-        {/* Bottom HR - thick rule */}
-        <hr className="extra-thick mt-2 w-full border-0 border-t-2 border-[var(--color-border)]" />
+        {/* Bottom HR - thin rule */}
+        <hr className="mt-2 w-full border-0 border-t border-[var(--color-border)]" />
       </div>
     </header>
   );
