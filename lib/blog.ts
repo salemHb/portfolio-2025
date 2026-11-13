@@ -2,72 +2,38 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-// Define BlogPost type with full properties
 export type BlogPost = {
   slug: string;
   title: string;
   date: string;
-  excerpt?: string;
+  excerpt: string;
   tags: string[];
+  cover?: string;
   content: string;
   readTime: string;
 };
 
-// Path to blog content folder
-const postsDirectory = path.join(process.cwd(), "content", "blog");
+const directory = path.join(process.cwd(), "content", "blog");
 
-// Util to format date (e.g., Aug 2, 2025)
-export function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}
-
-// Read file content and frontmatter by slug
 export function getPostBySlug(slug: string): BlogPost | null {
-  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-  if (!fs.existsSync(fullPath)) return null;
-
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
-
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return null;
+  const file = path.join(directory, `${slug}.mdx`);
+  if (!fs.existsSync(file)) return null;
+  const { data, content } = matter(fs.readFileSync(file, "utf8"));
+  if (data.published !== true || typeof data.title !== "string" || typeof data.date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(data.date)) return null;
   return {
-    slug,
-    title: data.title,
-    date: data.date,
-    excerpt: data.excerpt || "",
-    tags: data.tags || [],
-    content,
-    readTime: calculateReadTime(content),
+    slug, title: data.title, date: data.date,
+    excerpt: typeof data.excerpt === "string" ? data.excerpt : "",
+    tags: Array.isArray(data.tags) ? data.tags.filter((tag: unknown): tag is string => typeof tag === "string") : [],
+    cover: typeof data.cover === "string" && (/^https:\/\//.test(data.cover) || /^\/(?!\/)/.test(data.cover)) ? data.cover : undefined,
+    content, readTime: `${Math.max(1, Math.ceil(content.trim().split(/\s+/).length / 200))} min read`,
   };
 }
 
-// Get all blog posts
 export function getAllPosts(): BlogPost[] {
-  const fileNames = fs
-    .readdirSync(postsDirectory)
-    .filter((file) => file.endsWith(".mdx"));
-
-  return fileNames
-    .map((fileName) => {
-      const slug = fileName.replace(/\.mdx$/, "");
-      return getPostBySlug(slug);
-    })
+  return fs.readdirSync(directory).filter((file) => file.endsWith(".mdx"))
+    .map((file) => getPostBySlug(file.slice(0, -4)))
     .filter((post): post is BlogPost => post !== null)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort((a, b) => b.date.localeCompare(a.date));
 }
-
-// Get latest N posts
-export function getLatestPosts(count: number): BlogPost[] {
-  return getAllPosts().slice(0, count);
-}
-
-// Estimate read time from word count
-function calculateReadTime(content: string): string {
-  const wordsPerMinute = 200;
-  const numberOfWords = content.trim().split(/\s+/).length;
-  const minutes = Math.ceil(numberOfWords / wordsPerMinute);
-  return `${minutes} min read`;
-}
+export function getLatestPosts(count: number): BlogPost[] { return getAllPosts().slice(0, count); }

@@ -1,43 +1,17 @@
-# Hussein Salim - Portfolio 2025
+# Hussein Salim — portfolio
 
-A modern, interactive portfolio website showcasing my skills, projects, and professional experience.
+A Next.js portfolio and file-based engineering blog.
 
+## Local development
 
-## 🚀 Features
+Install dependencies with `npm install`, then run `npm run dev` and open the displayed local URL.
 
-- **Modern UI/UX**: Clean, responsive design with glass-card aesthetics
-- **Interactive Elements**: Dynamic project showcase, skill visualization, and more
-- **Dark/Light Mode**: Fully customizable theme with multiple accent colors
-- **Accessibility**: High contrast mode and reduced motion options
-- **Performance Optimized**: Fast loading times and smooth animations
-- **Mobile Responsive**: Seamless experience across all device sizes
+## Blog publishing
 
-## 💻 Tech Stack
+Open `/admin` to write a new post. Enter the GitHub owner, repository, deployment branch, and a fine-grained personal access token restricted to that repository with **Contents: read and write** permission. The browser sends the token directly to GitHub; it is not stored by the application. The editor creates `content/blog/<slug>.mdx` and refuses to overwrite an existing file. A hosting service connected to that branch must rebuild and deploy after the commit. To edit or delete posts, use GitHub or edit the files in the repository. The editor is a public page, not a login-protected dashboard: GitHub permissions authorize each publication. Never use a token on an untrusted or non-HTTPS deployment.
 
-- **Framework**: Next.js 14 with App Router
-- **Styling**: Tailwind CSS with custom animations
-- **State Management**: React Hooks
-- **Deployment**: Vercel
-- **Animations**: Custom CSS animations with configurable speeds
+Articles use Markdown/MDX with front matter containing `title`, `date` (YYYY-MM-DD as a quoted string), `excerpt`, `tags`, optional `cover` (HTTPS URL or site-relative path), and `published: true`. Only explicitly published posts appear publicly. Existing sample files are unpublished until reviewed and given that flag. MDX can execute code during rendering, so only publish trusted content.
 
-## 🛠️ Customization
+## SEO and deployment
 
-The portfolio includes a theme customization panel that allows visitors to:
-
-- Toggle between dark and light modes
-- Choose from multiple accent colors
-- Adjust animation speed
-- Enable high contrast mode
-- Enable reduced motion
-
-## 📱 Sections
-
-- **Hero**: Introduction with animated elements
-- **About**: Professional summary and key skills
-- **Experience**: Work history and achievements
-- **Projects**: Showcase of featured projects with filtering
-- **Skills**: Comprehensive breakdown of technical skills
-- **Community Impact**: Speaking engagements and community contributions
-- **Contact**: Multiple ways to get in touch
-
-
+Set `NEXT_PUBLIC_SITE_URL` to the actual public origin (for example `https://example.com`) in the deployment environment before building. This enables canonical URLs and a populated sitemap at `/sitemap.xml`; `/robots.txt` excludes the editor. Article metadata, social previews, and BlogPosting structured data are generated from each post. Add HTTPS cover images for rich social cards. After deployment, submit the sitemap to your preferred search engine and verify the public pages. Without the site URL, the sitemap is intentionally empty to avoid publishing localhost URLs.
