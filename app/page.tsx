@@ -11,6 +11,14 @@ const projects = [
   { icon: GitBranch, title: "Production reliability toolkit", kind: "Planned · Observability", description: "An observability and incident-response stack for real services.", details: "Instrument a sample application with metrics, logs, and traces; define service-level objectives and actionable alerts. Add deployment checks, runbooks, failure injection, and an incident review.", tags: "OpenTelemetry · Prometheus · Grafana · CI/CD" },
 ];
 
+const companyLogos: Record<string, string> = {
+  "Food Innovation Studio": "/company-logos/food-innovation-studio.svg",
+  "International Rescue Committee": "/company-logos/international-rescue-committee.png",
+  "Tendu Solutions": "/company-logos/tendu.png",
+  "Farmbid Africa": "/company-logos/farmbid.webp",
+  "Hallmark Marketing Company": "/company-logos/hallmark.jpg",
+};
+
 const experience = [
   { role: "Digital Infrastructure Lead", company: "Food Innovation Studio", period: "Jan 2026 – Present", description: "Lead digital infrastructure, backend systems, web platforms, and data workflows. Work across architecture, integrations, security practices, monitoring, automation, and documentation." },
   { role: "Full-Stack Developer", company: "Tendu Solutions", period: "Jan 2024 – Oct 2025", description: "Built web applications and backend services, integrated APIs, supported AWS and Azure solutions, and automated business workflows." },
@@ -55,7 +63,7 @@ export default function Home() {
 
         <section id="experience" className="portfolio-section">
           <div className="section-heading"><div><p className="section-kicker">WHERE I’VE CONTRIBUTED</p><h2>Experience</h2></div><span>02 / WORK</span></div>
-          <div className="experience-list">{experience.map((item) => <article className="experience-row" key={item.company}><span className="item-icon"><Briefcase size={18} /></span><div className="row-main"><h3>{item.role} <span>at {item.company}</span></h3><p>{item.description}</p></div><p className="row-kind">{item.period}</p></article>)}</div>
+          <div className="experience-list">{experience.map((item) => <article className="experience-row" key={item.company}><span className="item-icon company-logo">{companyLogos[item.company] ? <img className={item.company === "Farmbid Africa" ? "farmbid-logo" : undefined} src={companyLogos[item.company]} alt="" /> : <Briefcase size={18} />}</span><div className="row-main"><h3>{item.role} <span>at {item.company}</span></h3><p>{item.description}</p></div><p className="row-kind">{item.period}</p></article>)}</div>
         </section>
 
         <section id="skills" className="portfolio-section">
